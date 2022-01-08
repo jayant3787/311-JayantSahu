@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 scopes Demo</title>
+</head>
+<body>
+    <script src="./ProductMain.js"></script>
+    <script>
+        var a = 10;
+        var prod1 = new Product(7,55000,1007,"washing",2022,"./machine.jpg");
+
+        function f(){
+            var x = 5;
+            document.write`<br>value of global var is ${x}`;
+        };
+        document.write`<br>value of global var prod1  is ${prod1.proPri}`;
+        document.write`<br>value of  f's local var x is ${a}`;
+
+        f();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest ... Demo</title>
+</head>
+<script>
+    var arr1 = [10,20,30,40,50,60,70,80,90,100];
+    // we want subarray starting from 40 to 100
+    [a,b,...subArray] = arr1;
+    document.write(`<br><br>subarray is ${subArray}`);
+    function f1([a,b,c,d,e,f,...y]){
+        document.write(`<br><br>subarray inside function is ${y}`);
+    }
+    f1(arr1);
+
+</script>
+<body>
+        <header style="font-size: 25pt; color: aliceblue; background-color: black; text-align: center;">Spread Operator</header>
+
+</body>
+</html>

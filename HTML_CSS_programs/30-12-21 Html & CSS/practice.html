@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usage of input control</title>
+</head>
+<body>
+    <h1><center> Welcome To Babylon Boutique Hotel</center></h1><br/>
+        <form action="" style="border: 5px solid black; border-radius: 10px;" > <br/>
+            <label for="Fname">First Name:</label>
+            <input type="text" width="100%" required> <br/><br/>
+    
+            <label for="LName">Last Name:</label>
+            <input type="text"width="100%" required> <br/><br/>
+
+            <label for="Age">Age:</label>
+            <input type="number"width="100%" name="number" min="1" max="75" required> <br/><br/>
+
+            <label for="cindate">CheckIN Date and Time:</label>
+            <input type="datetime-local"width="100%" name="checkin"> <br/><br/>
+
+            
+            <label for="coutdate">CheckOUT Date and Time:</label>
+            <input type="datetime-local"width="100%" name="checkout"> <br/><br/>
+
+            <label> Select Gender</label><br/>
+            <input type="radio" name="sex" value="Male">Male <br/>
+            <input type="radio" name="sex" value="Female">Female <br/><br/>
+
+            <p>Mobile No.:</p>
+            <input type="tel" name="number" pattern="^[6-9]\d{9}$
+            " required/><br/><br/>
+
+            <p>Room Type :</p>
+            <datalist id="options">
+              <option value="AC"></option>
+              <option value="Non Ac"></option>
+              <option value="Suite Room"></option>
+            </datalist>
+            <p>Please select the type of the room</p>
+            <input list="options" /><br/><br/>
+       
+            <label for="Email">Email:</label>
+            <input type="email" autofocus> <br/><br/>
+            <label>Please Select ID</label><br/>
+            <select name="ID" style="border-width: 4px; border-color:crimson;">
+                <option value="select">Select</option>
+                <option value="aadhar">Aadhar</option>
+                <option value="pan">PAN</option>
+                <option value="DL">DL</option>
+            </select><br/><br/>
+
+            <p>Select the No. of visitors (Select 1 to 10):</p>
+        <input type="range" name="range" min="0" max="10" step="1"/><br/><br/>
+
+        <p> Application Rating:</p>
+      <p>
+        Bad:
+        <meter name="ratingb" value="45" low="50" min="0" max="100">
+          jsrjggjrj
+        </meter>
+      </p>
+      <p>
+        Good:
+        <meter
+          name="ratingg"
+          value="90"
+          min="0"
+          low="90"
+          high="94"
+          max="100"
+        ></meter
+        ><br /><br />
+      </p>
+            <input type="submit" value="REGISTER" width="100%"><br/><br/>
+</body>
+</html>

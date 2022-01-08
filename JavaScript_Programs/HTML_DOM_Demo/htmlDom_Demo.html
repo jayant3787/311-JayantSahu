@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Demo</title>
+</head>
+<body>
+    <script src="./ProductMain.js"></script>
+   
+    <p id="p1">My Old Para</p>
+    <div>
+        <p>My para inside div </p>
+    </div>
+    <script>
+        // accessing HTML elements with their ID
+        var x = document.getElementById("p1");
+        document.write(x.innerHTML);
+        x.innerHTML = "my new para";
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <script src="module1.js"></script>
+    <script src="module2.js"></script> -->  
+    
+    <script type="module">
+        import {a1} from  "./module1.js";
+        import {a1 as A1} from "./module2.js";
+    //import "./module2.js";
+    </script>  
+
+    <script>
+        alert(getTodaysDate());
+        alert(a1);
+        alert(A1);
+        alert(getTodaysDate());
+
+    </script>
+
+</head>
+
+<body>
+    <p>This is my module Demo</p>
+</body>
+
+</html>

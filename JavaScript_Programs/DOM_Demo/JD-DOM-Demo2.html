@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM demo 2</title>
+</head>
+<header
+      style="
+        font-size: 25pt;
+        color: aliceblue;
+        background-color: black;
+        text-align: center;
+      "
+    >
+      DOM EVENTS 2
+    </header>
+    <script>
+
+        //event handle that print which type of html event happened
+        f = (ele) => alert(`inside function f  ${ele} clicked`);
+
+        //event handle that print which  who generated that html event
+        g1 = (evt) => alert(`inside function g  ${evt.target} clicked`);
+
+        //event handle that what content is there inside that target 
+        g2 = (evt) => alert(`inside function g2  ${evt.target.innerHTML} appeared`);
+
+        //event handle that what content is there inside that target and changing the content on event
+        g3 = (evt) => alert(`inside function g  ${evt.target.innerHTML="hello"} clicked`);
+
+        rem = () => document.getElementById("p2").removeEventListener("mouseover",g2)
+
+        
+        
+    </script>
+<body>
+
+    <!-- new way -->
+    <p id="p1"> PARA 1</p>
+    <p id="p2" style="border: 2px solid brown;">PARA 2</p>
+
+    <!-- old way -->
+    <div onmouseover="f('divison');" style="border: solid black;"> DIVISION 1</div><br>
+    <button onclick="rem()">BUTTON 1</button><br><br>
+    <input  type="text" name="" id="i1" placeholder="Enter something"><br><br>
+    <img onclick="f('img');" src="./images/bottle.jpg" alt="" style="height: 200px; width: 200px; border: 2px solid blue;">
+    <a onclick="f('anchor');" href="www.google.com">Click here to see google</a>
+
+    <script>
+        // new way
+        var para2 = document.getElementById("p2");
+        para2.addEventListener('click',f);
+        para2.addEventListener('mouseover',g2);
+        para2.addEventListener('mouseenter',g3);
+
+        // new way in single line
+        document.getElementById("p1").addEventListener("click",g3);
+
+        document.getElementById("i1").addEventListener("change",g);
+
+        // we can also add more than one event to an element
+    </script>
+</body>
+</html>

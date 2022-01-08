@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XHR demo</title>
+</head>
+<header
+      style="
+        font-size: 25pt;
+        color: aliceblue;
+        background-color: black;
+        text-align: center;
+      "
+    >
+      XHR ajax demo
+    </header><hr>
+    <div id="logger"></div>
+    <hr>
+    <script>
+        var logg = document.getElementById("logger");
+
+        const sendAjaxRequest = () =>{
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = mycallBack;
+            request.open("GET","https://jsonplaceholder.typicode.com/users");
+            request.send(id = 1);
+
+        };
+
+        // const sendAjaxRequest1 = () =>{
+        //     var request = new XMLHttpRequest();
+        //     request.onreadystatechange = () => mycallBack1;
+        //     request.open("GET","https://jsonplaceholder.typicode.com/comments");
+        //     request.send(null);
+
+           
+ 
+            // logg.innerHTML=logg.innerHTML +
+            //  `<br> All details of second person : ${JSON.stringify(json_data[6] )}`;
+
+
+        mycallBack = (evt) =>{
+            if ((evt.currentTarget.readyState == 4)
+            && (evt.currentTarget.status == 200 || evt.currentTarget.status == 0)) {
+            var json_data = JSON.parse(evt.currentTarget.responseText);
+ 
+            logg.innerHTML = logg.innerHTML + 
+            `Name of the person : ${json_data[7].name}`;
+            logg.innerHTML = logg.innerHTML +
+             `<br>  Address of the person :
+              ${JSON.stringify(json_data[7].address)}`;
+ 
+            logg.innerHTML = logg.innerHTML +
+             `<br> All details of the person : ${JSON.stringify(json_data[7] )}`;
+            }
+        };
+
+
+        // };
+        // mycallBack1 = (evt1) =>{
+        //     if ((evt1.currentTarget.readyState == 4)
+        //     && (evt1.currentTarget.status == 200 || evt1.currentTarget.status == 0)) {
+        //     var json_data = JSON.parse(evt1.currentTarget.responseText);
+ 
+        //     logg.innerHTML=logg.innerHTML + 
+        //     `Name of person : ${json_data[6].name}`;
+        //     logg.innerHTML=logg.innerHTML +
+        //      `<br>  Address of first person :
+        //       ${JSON.stringify(json_data[6].body)}`;
+        //     }};
+    </script>
+<body>
+    <button onclick="sendAjaxRequest();">Click to send request</button>
+</body>
+</html>

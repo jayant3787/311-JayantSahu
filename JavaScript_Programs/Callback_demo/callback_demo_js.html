@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CallBack JS Demo</title>
+  </head>
+  <body>
+    <script>
+      function f1() {
+        document.write(" <br>Inside F1");
+      }
+
+      function f2(a, b) {
+        document.write("Inside F2 a = " + a);
+        // document.write("Inside F2 b = " + b());
+        b();
+      }
+
+      function add(x, y) {
+        return x + y;
+      }
+      function multiply(x, y) {
+        return x * y;
+      }
+
+      function f3(p, q, f) {
+        var d = f(p, q);
+        document.write("<br> " + d);
+      }
+      f2(10, f1);
+
+      f3(10, 20, add);
+
+      // f1();
+
+      function discount(price, percentage) {
+        // document.write((price*percentage)/100);
+        return (price * percentage) / 100;
+      }
+
+      function offer(price) {
+        document.write(price / 2);
+        return price / 2;
+      }
+
+      function FinalPrice(price, percentage, f, g) {
+        // document.write(p)
+        // var k = m(price,discount,offer);
+        // m();
+        if (price > 50) {
+          var k = f(price);
+        } else {
+          k = price;
+        } // g is the offer function
+        var o = g(k, percentage); // o is discount on the offer price
+        return o;
+      }
+
+      var f = FinalPrice(50, 20, offer, discount);
+      document.write("<br>Final price of 50 and 20");
+
+      document.write(" " + f);
+    </script>
+  </body>
+</html>

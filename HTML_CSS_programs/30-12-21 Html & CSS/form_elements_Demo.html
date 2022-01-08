@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <p>Score of Batsman:</p>
+      <p>
+        Virat:
+        <meter name="batsman1" value="45" low="50" min="0" max="100">
+          jsrjggjrj
+        </meter>
+      </p>
+      <p>
+        Rohit:
+        <meter
+          name="batsman2"
+          value="96"
+          min="0"
+          low="90"
+          high="94"
+          max="100"
+        ></meter
+        ><br /><br />
+      </p>
+      <p>This is my progress bar</p>
+      <p>MCA:</p><progress value="56" min="1" max="100"></progress><br /><br />
+
+      <p>My datalist :</p>
+      <datalist id="options">
+        <option value="Internet Explorer"></option>
+        <option value="Mozilla"></option>
+        <option value="Firefox"></option>
+        <option value="Google Chrome"></option>
+      </datalist>
+      <p>input control that uses above datalist</p>
+      <input list="options" />
+    </form>
+
+    <p>output element demo</p>
+    <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+      0<input type="range" name="b" value="50" />100 +
+      <input type="number" name="a" value="10" /> =
+      <output name="result"></output>
+    </form>
+
+    <!-- <script>
+        alert("score of virat is:"+document.getElementsByName("batsman1").value);
+    </script> -->
+  </body>
+</html>

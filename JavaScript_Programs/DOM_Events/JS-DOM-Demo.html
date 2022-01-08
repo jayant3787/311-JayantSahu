@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM Demo</title>
+</head>
+<header
+      style="
+        font-size: 25pt;
+        color: aliceblue;
+        background-color: black;
+        text-align: center;
+      "
+    >
+      DOM EVENTS
+    </header>
+    <script>
+        f = (ele) => alert(`inside function f  ${ele} clicked`);
+    </script>
+<body>
+    <p onclick="f('para');"> PARA 1</p>
+    <div onmouseover="f('divison');" style="border: solid black;"> DIVISION 1</div>
+    <button onclick="f('button');">BUTTON 1</button>
+    <input type="text" name="" id="" placeholder="Enter something">
+    <img onclick="f('img');" src="./images/bottle.jpg" alt="" style="height: 200px; width: 200px;">
+    <a onclick="f('anchor');" href="www.google.com">Click here to see google</a>
+</body>
+</html>

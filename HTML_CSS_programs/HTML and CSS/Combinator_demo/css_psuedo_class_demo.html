@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suedo demo</title>
+</head>
+<style>
+    :link{
+        color: rgb(58, 26, 3);
+    }
+
+    a:visited{
+        color: rgb(57, 231, 240);
+    }
+    a:hover{
+        color: rgb(148, 158, 52);
+    }
+    :focus{
+        border: 6px solid darkred;
+    }
+
+    :first-letter{
+        font-size: 102px;
+    }
+    p:first-line{
+        font-size: 24px;
+    }
+    p:after{
+        content: "##########################";
+    }
+    p:before{
+        content: "$$$$$$$$$$$$$$$$$$$$$$$$";
+    }
+    section p:first-child{
+        background-color: rgb(235, 195, 146);
+    }
+    ul li:nth-child(3){
+        color: chartreuse;
+        list-style-type:armenian;
+    }
+    ::selection{
+        background-color: chartreuse;
+    }
+</style>
+
+<body>
+    <a href="">link 1</a>
+    <a href="combinators_Demo.html">link2</a><br/><br/>
+    <input type="text" size="40">
+    <button value="i am a button">I am a button</button><br/><br/>
+
+    <section>
+        I am section
+    
+
+    <p>I am a para1 <br/>
+        I am a para1
+        I am a para1
+        I am a para1
+    </section>
+    </p>
+    <p>I am a para2</p>
+    <p>I am a para3</p>
+    <p>I am a para4</p>
+
+    <ul>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+    </ul>
+
+
+    
+</body>
+</html>

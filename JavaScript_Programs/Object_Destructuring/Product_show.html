@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <title>product show</title>
+  </head>
+  <header
+      style="
+        font-size: 25pt;
+        color: aliceblue;
+        background-color: black;
+        text-align: center;
+      "
+    >
+      Object destructuring using class as external js
+    </header>
+    <script>
+      imgEH1 = (evt) => `${evt.target.width = 300} ${evt.target.height = 300}`;
+      imgEH2 = (evt) => `${evt.target.width = 80} ${evt.target.height = 80}`;
+      g = (ele) => {
+        if(ele.target.innerHTML.trim()<5000)
+        alert(`product is on ${ele.target.innerHTML} offer`);
+    };
+
+    </script>
+
+<script>
+  $(document).ready(
+      () => {
+          $("img").mouseover(imgEH1);
+          $("img").mouseout(imgEH2); 
+          
+          // $("[src]").click(pEH);
+      }
+  );
+
+</script>
+
+
+  <script src="./products.js"></script>
+  <script>
+    var myproducts = [p1,p2,p3,p4,p5];
+    var all = "";
+    f3 = ({ image,ProPri, proName}) => `<div style="float:left"><p><img style="float:left" src=${image} width=100px height=100px></p><p class="pricepara"> ${ProPri}</p> <p>product name ${proName}</p></div>  `;
+    for ( var i = 0; i<myproducts.length;i++){
+        // if(myproducts>5000)
+        all = all + ` <p> ${f3(myproducts[i])}</p>`;
+    }
+    all = `<section>${all}</section>`;
+    document.write(all);
+    
+  
+    var pricetags = document.getElementsByClassName("pricepara");
+    for(pricetag of pricetags){
+      pricetag.addEventListener("click",g );
+    }
+
+  </script>
+  <body>
+    
+  </body>
+</html>

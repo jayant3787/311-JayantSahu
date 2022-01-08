@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+  </head>
+  <body>
+    <style>
+      div {
+        background:rgb(154, 229, 231);
+        border: 5px solid rgb(94, 102, 104);
+        margin: 5px;
+        padding: 5px;
+      }
+      .section_grid {
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+      }
+
+      .product4 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+
+      .product8 {
+        grid-column: span 1;
+      }
+      nav {
+        display: inline;
+      }
+      .n1{
+          grid-column: span 3;
+      }
+      .n2{
+          grid-column: span 4;
+      }
+      .section_grid2{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+      }
+      .section_grid3{
+        display: grid;
+        grid-template-columns: repeat(4,3fr);
+        grid-template-rows: repeat(4,3fr);
+
+      }.section_grid4{
+        display: grid;
+        grid-template-columns: repeat(5);
+        height: 400px;
+      }
+      .section_grid5{
+        display: grid;
+        grid-template-columns: repeat(5);
+        height: 80px;
+      }
+    </style>
+    <section class="section_grid5">
+      <div>
+        <label for="search">Enter Prices here</label>
+        <input onchange="changeBorder();" type="text" placeholder="search here" id="search" name="search" />
+
+      </div>
+    </section>
+
+    <section class="section_grid">
+      <div style="background-image: url(./images/ss.jpg); background-size:cover;">
+        
+        
+      </div>
+      <div class="n1">
+        <p style="font-size: 40px; text-align: center; font-family: monospace; font-weight: bold;">
+          WELCOME TO THE ONLINE SHOPPING </p>
+      </div>
+      <div style="background-image: url(./images//pro.png); background-repeat: no-repeat; background-size:contain; align-items: center;">
+          <p style="margin-left: 150px; font-size: 40px; font-family: monospace; font-weight: bold;">Jayant</p>
+      </div>
+    </section>
+
+    <section class="section_grid2">
+        <div>
+          <p style="text-align: center; font-size:50px; font-weight: bold; font-family: monospace;">Plus Zone</p>
+          <ul style="font-family: monospace; font-size:xx-large; font-weight:bolder; padding-right: 50px; list-style-type: square;"> All category
+            <li>Fashion</li><br/>
+            <li>Mobiles</li><br/>
+            <li>Electronics</li><br/>
+            <li>Home</li><br/>
+            <li>Appliances</li><br/>
+            <li>Beauty</li><br/>
+            <li>Toys & Baby</li><br/>
+            <li>Furniture</li><br/>
+            <li>Sports</li><br/>
+            <li>Grocery</li><br/>
+            <li>Flights</li><br/>
+            <li>Insurance</li><br/>
+            <li>Cars</li><br/>
+            <li>Refurbished</li><br/>
+            <li>India's Heritage</li><br/>
+            
+          </ul>
+          <p style="text-align: center; font-size:40px; font-weight: bold; font-family: monospace;">Language</p>
+          <p style="text-align: center; font-size:40px; font-weight: bold; font-family: monospace;">Offer Zone</p>
+          <p style="text-align: center; font-size:40px; font-weight: bold; font-family: monospace;">My Orders</p>
+          <p style="text-align: center; font-size:40px; font-weight: bold; font-family: monospace;">My Cart</p>
+          <p style="text-align: center; font-size:40px; font-weight: bold; font-family: monospace;">My Wishlist</p>
+          <p style="text-align: center; font-size:40px; font-weight: bold; font-family: monospace;">My Account</p>
+          <p style="text-align: center; font-size:40px; font-weight: bold; font-family: monospace;">My Chats</p>
+          <p style="text-align: center; font-size:40px; font-weight: bold; font-family: monospace;">Help Centre</p>
+          <p style="text-align: center; font-size:40px; font-weight: bold; font-family: monospace;">Privacy Policy</p>
+          <p style="text-align: center;"><a href="" style="font-family: monospace; font-size: 40px;">Logout</a></p>
+        </div>
+        <div class="n2">
+            <section class="section_grid3">
+                <div>
+                  <img src="./images//heating.jpg" height="250px" width="262px">
+                  <p style="text-align: center; font-size: 35px; font-family: monospace"> Heating Pad<br/>
+                    color: Blue <br/>
+                  250/-</p>
+                <p class="price">
+                  250
+                </p> </div>
+                <div>
+                  <img src="./images/redmi.jpg" height="250px" width="262px">
+                  <p style="text-align:center;  font-size: 35px; font-family: monospace">
+                Redmi Note 5 <br/>
+                color: Black <br/>
+                15000/-
+              </p>
+              <p class="price">
+                25000
+              </p>
+              </div>
+                <div>
+                  <img src="./images//bottle.jpg" height="250px" width="262px">
+                 <p style="text-align: center; font-size: 35px; font-family: monospace;"> Water bottle <br/>
+                  color: 6colour <br/>
+                250/-</p>
+                <p class="price">
+                  10000
+                </p></div>
+                <div>
+                  <img src="./images//saree.jpg" height="250px" width="262px">
+                 <p style="text-align: center; font-size: 35px; font-family: monospace"> Saree  <br/>
+                  color: Blue <br/>
+                750/-</p>
+                <p class="price">
+                  15000
+                </p></div>
+                <div>
+                  <img src="./images/machine.jpg" height="250px" width="262px">
+                 <p style="text-align: center; font-size: 35px; font-family: monospace"> Washing Machine</br>
+               color: grey
+               25000/-
+               </p>
+               <p class="price">
+                20000
+              </p>
+             </div>
+                <div>
+                  <img src="./images/lapi.jpg" height="250px" width="262px">
+                 <p  style="text-align: center; font-size: 35px; font-family: monospace"> Laptop Lenovo <br/>
+                  color: silver <br/>
+                45000/-</p>  </div>
+                <div> 
+                  <img src="./images/fan.jpeg" height="250px" width="262px">
+                 <p style="text-align: center; font-size: 35px; font-family: monospace"> Ceiling Fan  <br/>
+                  color: grey <br/>
+                2500/-</p></div>
+                <div>
+                  <img src="./images/sofa.jpg" height="250px" width="262px">
+                 <p style="text-align: center; font-size: 35px; font-family: monospace"> Sofa  <br/>
+                  color: Black <br/>
+                25000/-</p></div>
+                <div> 
+                  <img src="./images/fan.jpeg" height="250px" width="262px">
+                 <p style="text-align: center; font-size: 35px; font-family: monospace"> Ceiling Fan  <br/>
+                  color: Black <br/>
+                2500/-</p></div>
+                <div>
+                  <img src="./images/sofa.jpg" height="250px" width="262px">
+                 <p style="text-align: center; font-size: 35px; font-family: monospace"> Sofa  <br/>
+                  color: Black <br/>
+               25000/-</p></div>
+                <div>
+                  <img src="./images//machine.jpg" height="250px" width="262px">
+                 <p style="text-align: center; font-size: 35px; font-family: monospace"> Washing Machine <br/>
+                color: grey <br/>
+              25000/-</p></div>
+                <div>
+                  <img src="./images/lapi.jpg" height="250px" width="262px">
+                 <p style="text-align: center; font-size: 35px; font-family: monospace"> Laptop Lenovo <br/>
+                  color: silver <br/>
+                45000/-</p>  </div>
+                <div>
+                  <img src="./images//machine.jpg" height="250px" width="262px">
+                 <p style="text-align: center; font-size: 35px; font-family: monospace"> Washing Machine <br/>
+                color: grey <br/>
+            25000/-</p></div>
+                <div>
+                  <img src="./images//lapi.jpg" height="250px" width="262px">
+                 <p style="text-align: center; font-size: 35px; font-family: monospace"> Laptop Lenovo <br/>
+                  color: silver <br/>
+                45000/-</p>  </div>
+                <div>
+                  <img src="./images//bottle.jpg" height="250px" width="262px">
+                 <p style="text-align: center; font-size: 35px; font-family: monospace;"> Water bottle <br/>
+                  color: 6colour <br/>
+                250/-</p></div>
+                <div>
+                  <img src="./images//saree.jpg" height="250px" width="262px">
+                 <p style="text-align: center; font-size: 35px; font-family: monospace"> Saree  <br/>
+                  color: Blue <br/>
+                750/-</p></div>
+
+
+              </section>
+            
+        </div>
+    </section>
+    <section class="section_grid4">
+      <div style="background-image: url(./images//hor.jpg); background-repeat: no-repeat; background-size:cover;">
+        <p style="text-align: center; font-size: 40px; font-family: monospace; font-weight: bold;">HAPPY SHOPPING!!!!!!!!!!!!!!!!!</p>
+        <!-- <div class="section_grid4"></div>
+
+      </div> -->
+      <button onclick="changeColour();">Click me</button>
+    </section>
+    <script src="./main.js"></script>
+
+    
+  </body>
+</html>

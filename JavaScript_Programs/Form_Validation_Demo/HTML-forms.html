@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <title>HTML FORM PROCESSING</title>
+    <header
+      style="
+        font-size: 25pt;
+        color: aliceblue;
+        background-color: black;
+        text-align: center;
+      "
+    >
+      HTML FORM VALIDATION
+    </header><br/><br/>
+    <div id="logger"></div><br/><br/>
+</head> 
+<script>
+    // var pass1 = document.getElementById("pass");
+    
+    var log = document.getElementById("logger");
+    // alert("1");
+    // ClientSideFormProcessor = () => {alert('HELLO');log.innerHTML=`hello Jayant`;return false;}
+    // let formHandle = document.forms['userForm'];
+    ClientSideFormProcessor = () => {
+        let formHandle = document.forms['userForm'];
+        log.innerHTML = `First Name ${formHandle.firstname.value}
+         <br>Password : ${formHandle.password1.value}`;
+
+
+        // password validation example 
+        if(formHandle.password1.value.length < 8){
+
+            // Jquery way
+            $("#pass").css("background-color","blue");
+
+            // js way
+        // formHandle.password1.style = "background-color:red";
+
+
+        }
+
+        // radio validation
+        log.innerHTML = log.innerHTML + `<br> You like ${formHandle.music.value}`;
+        
+
+        //checkbox
+        let allGenre="";
+        // alert("2");
+        for(let i = 0; i<formHandle.musicCB.length; i++){
+            
+            if(formHandle.musicCB[i].checked){
+               allGenre = allGenre +formHandle.musicCB[i].value;
+            }
+        };
+        
+        log.innerHTML = log.innerHTML + `<br> You selected  ${allGenre} genre`;
+        
+
+
+        // selection list
+
+        let allFruits="";
+        for(let i = 0; i<formHandle.fruits.length; i++){
+            
+            if(formHandle.fruits[i].selected){
+               allFruits = allFruits +formHandle.fruits[i].value;
+            }
+        };
+        
+        log.innerHTML = log.innerHTML + `<br> You selected  ${allFruits} `;
+        // return false;
+
+        // text Area
+        log.innerHTML = log.innerHTML + `<br> Your text is:  ${formHandle.area.value} `;
+
+    }
+
+    
+
+
+
+        // alert('HELLO');
+        
+</script>
+<body>
+    <form name="userForm" action="form.py" method="POST">
+      First Name :   <input type="text" name="firstname"><br/><br/>
+      Password : <input type="password" name="password1" id="pass"><br/> <br/>
+
+      Which music is your favourite?<br><br>
+      <input type="radio" name="music" value="Meditation">Meditation <br>
+      <input type="radio" name="music" value="Pop">Pop <br>
+      <input type="radio" name="music" value="Bollywood">Bollywood <br><br>
+
+        your favourite genre is?<br><br>
+      <input type="checkbox" name="musicCB" value="Western">Western <br>
+      <input type="checkbox" name="musicCB" value="Romantic">Romantic <br>
+      <input type="checkbox" name="musicCB" value="Classic">Classic <br><br>
+
+      select your favourite fruit: <br><br>
+      <select name="fruits">
+          <option value="mango">Mango</option>
+          <option value="apple">Apple</option>
+          <option value="watermelon">Watermelon</option>
+      </select><br><br>
+
+      Tell us something more: 
+      <textarea name="area" cols="40" rows="7"></textarea>
+
+      <input type="submit" onclick=" ClientSideFormProcessor(); return false;">
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,135 @@
+
+<!-- 1St way!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch API </title>
+    <header style="font-size: 14pt; color:white; background-color: black; text-align: center;display:inline">Fetch API
+        demo</header>
+    <hr>
+    <div id="logger"></div>
+    <hr>
+</head>
+<script>
+    var logg = document.getElementById("logger");
+ 
+    sendAJaxRequest = () => {
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then(res => res.json())
+            .then(res => logg.innerHTML = res[7].address.city);
+    };
+ 
+    //Fetch API for posting form content
+    sendAJaxPostRequest = () => {
+        alert("1 " + document.forms["form1"].title1.value);
+        var bodyContent = {
+            userId: "1",
+            title: document.forms["form1"].title1.value,
+            body: document.forms["form1"].body1.value
+        };
+ 
+        var stringifiedBody = JSON.stringify(bodyContent);
+        alert("2 " + stringifiedBody);
+ 
+        fetch(
+            "https://jsonplaceholder.typicode.com/posts",
+            {
+                method: "POST",
+                body: stringifiedBody ,
+                headers: {
+                    "Content-type": "application/json;chartset=UTF-8"
+                }
+            }
+        )
+        
+            .then(res => res.json())
+            .then(res => logg.innerHTML =
+                `Response of posting. id=${res.id} id=${res.title}`);
+                alert("5");
+    };
+ 
+</script>
+<body>
+    <p>Fetch API to get content. Click to fetchdata using fetch API</p>
+    <button onclick="sendAJaxRequest();">Click here to send an Fetch-aysnchronous request</button>
+ 
+    <br><br>
+    <form name="form1">
+        Add new Comment here:
+        <p>Your Title: <input type="text" name="title1">
+        <p>Your Body(comment): <input type="text" name="body1">
+        <p>Fetch API to post content. Click to fetchdata using fetch API</p>
+        <button onclick="sendAJaxPostRequest();">Click here to post an Fetch-aysnchronous request</button>
+    </form>
+</body>
+ 
+</html> -->
+
+
+<!-- Second Way!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch API </title>
+    <header style="font-size: 14pt; color:white; background-color: black; text-align: center;display:inline">Fetch API
+        demo</header>
+    <hr>
+    <div id="logger"></div>
+    <hr>
+</head>
+<script>
+    var logg = document.getElementById("logger");
+ 
+    sendAJaxRequest = () => {
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then(res => res.json())
+            .then(res => logg.innerHTML = res[7].address.city);
+    };
+ 
+    //Fetch API for posting form content
+    sendAJaxPostRequest = () => {
+        fetch(
+            "https://jsonplaceholder.typicode.com/posts",
+            {
+                method: "POST",
+                body: JSON.stringify({
+                    userId: "1",
+                    title: document.forms["f1form"].n1.value,
+                    body: document.forms["f1form"].n2.value
+                }),
+                headers: {
+                    "Content-type": "application/json;chartset=UTF-8"
+                }
+            }
+        )
+            .then(res => res.json())
+            .then(res => logg.innerHTML =
+                `Response of posting. id=${res.id} title=${res.title}`);
+    };
+ 
+ 
+ 
+</script>
+ 
+<body>
+    <p>Fetch API to get content. Click to fetchdata using fetch API</p>
+    <button onclick="sendAJaxRequest();">Click here to send an Fetch-aysnchronous request</button>
+ 
+    <br><br>
+    <form name="f1form">
+        <br>Title: <input type="text" name="n1">
+        <br>Body: <input type="text" name="n2">
+    </form>
+ 
+    <p>Fetch API to post content. Click to fetchdata using fetch API</p>
+    <button onclick="sendAJaxPostRequest();">Click here to post an Fetch-aysnchronous request</button>
+</body>
+ 
+</html>

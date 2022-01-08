@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <header
+      style="
+        font-size: 25pt;
+        color: aliceblue;
+        background-color: black;
+        text-align: center;
+      "
+    >
+      Object destruction Demo
+    </header>
+    <title>Object destructuring demo</title>
+  </head>
+  <script>
+    var str = "hello"; // str holds a string literal
+    var car = {
+      price: 500000,
+      color: "red",
+      weight: 100,
+    }; // car is an object literal
+
+    function carDetails(c) {
+      document.write(
+        `1st way<br>price of car ${c.price} and weight is ${c.weight}<hr>`
+      );
+    }
+    carDetails(car);
+
+    function carDetails2(p, w) {
+      document.write(
+        `<br><br>2nd way<br>price of car ${p} and weight is ${w}<hr>`
+      );
+    }
+    carDetails2(car.price, car.weight);
+
+    // ES6 way...............................below object destructuring
+
+    function carDetails3({ price, weight }) {
+      document.write(
+        `<br>3rd way object destructuring ES6 way<br>price of car ${price} and weight is ${weight}<hr>`
+      );
+    }
+    carDetails3(car); /////////////till here
+
+    // built in object
+    function f({ appCodeName, appVersion }) {
+      document.write(`code is ${appCodeName} <br>version is ${appVersion}`);
+    }
+    f(navigator);
+
+    function displayDetailsES62(c) {
+      var { price: pr } = c; // extract price from car and store in pr
+
+      document.write(
+        `<hr><br>In displayDetailsES62 <br> Price is car is ${pr} `
+      );
+
+      car.weight = 20000000000;
+      var { weight, color } = c; // extract weight and color from object c.
+      document.write(
+        `<br>In displayDetailsES62 <br> Weight is car is ${weight} `
+      );
+    }
+    displayDetailsES62(car);
+
+    // another
+  </script>
+  <body>
+    
+  </body>
+</html>

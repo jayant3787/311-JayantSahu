@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <header style="font-size: 25pt; color: aliceblue; background-color: black; text-align: center;">Spread Operator</header>
+    <title>Spread operator demo</title>
+</head>
+<script>
+    function average(a,b,c){
+        return (a+b+c)/3;
+    }
+
+    document.write(`<br> Average of 10 20 30 is ${average(10,20,30)}`);
+    document.write("<br><br>");
+
+    // concatenating the array using the concatenation and spread operator
+    var arr = [10,24,30,40];
+    var arr2 = [50,60,70];
+    var arr3 = [100,200,300,400,500];
+    // var i = 0; 
+    // document.write(arr3[i]);
+    var combined =[...arr,...arr2,...arr3] 
+    document.write(`<br><br>combined array is ${combined}`);
+    // for (;arr.length;i++){
+    //     arr3[i] = arr[i];
+    // }
+    // document.write(arr3[i]);
+    // var combined =[...arr,...arr2] 
+    // document.write(`<br>combined array is ${combined}`);
+
+    // function add(...a1,...b1){
+    //     // return ();
+    // }
+
+    //effect of spread operator (...arr) this is right....... no need to give it like one by one (arr[0],arr[1],arr[2]) this is not required
+    var arr1 = average(...arr);
+    document.write(`<br> <br>Average of 10 20 30 is ${arr1}`);
+</script>
+<body>
+
+</body>
+</html>
