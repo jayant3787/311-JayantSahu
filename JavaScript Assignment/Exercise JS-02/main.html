@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <header>EXERCISE JS-02</header>
+    <br />
+    <br />
+
+    <title>Exercise JS-02</title>
+    <div id="logger">
+      Enter The String : <b>"She sells sea shells on the sea shore"</b> TO
+      MATCH<br /><br />
+      If You Will Enter Other String It Will Not Match
+    </div>
+    <br />
+    <br />
+  </head>
+  <script>
+    var log = document.getElementById("logger");
+    FormProcessor = () => {
+      let formHandle = document.forms["userForm"];
+      log.innerHTML = `<b>String Matching Failed!!!!!!!!!!!!!!!!!!!!!!!!!!!</b><br><br><b>Entered String is :</b> <span style = "color:red">${formHandle.string.value}</span>`;
+      if (formHandle.string.value == "She sells sea shells on the sea shore") {
+        log.innerHTML = `String Matched: <span style="color:green">She sells sea shells on the sea shore</span>`;
+      } else {
+        alert(`You Entered : ${formHandle.string.value}`);
+      }
+    };
+  </script>
+  <body>
+    <form name="userForm">
+      <b> Enter String Here : </b> <input type="text" name="string" id="str" />
+      <input
+        class="btn"
+        type="submit"
+        onclick=" FormProcessor(); return false;"
+      />
+    </form>
+  </body>
+</html>

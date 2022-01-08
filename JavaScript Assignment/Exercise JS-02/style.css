@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(221, 221, 219);
+}
+.btn{
+    background-color: rgb(124, 20, 77);
+    color: white;
+}
+header{
+    font-size: 25pt;
+          color: aliceblue;
+          background-color: black;
+          text-align: center;
+        
+}
