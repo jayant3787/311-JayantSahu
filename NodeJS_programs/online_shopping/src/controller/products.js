@@ -1,32 +1,39 @@
 // import { fetchProducts } from "../services/products.cjs";
-import { fetchProducts } from "../services/products.js";
-const getProducts = ( req, res ) => {
-    let {sort,order, minPrice,minRating,page} = req.query;
-    //convert a page to integer, and set a default of 1 or it is not passed
-    let pageInt = parseInt(page);
+import { fetchProducts, fetchProductById } from "../services/products.js";
+const getProducts = (req, res) => {
+  let { sort, order, minPrice, minRating, page, q } = req.query;
+  //convert a page to integer, and set a default of 1 or it is not passed
+  let pageInt = parseInt(page);
 
-    if(isNaN(page)){
-        pageInt = 1;
-    }
+  if (isNaN(page)) {
+    pageInt = 1;
+  }
 
-    if(!sort){
-        sort = 'name';
-    }
+  if (!sort) {
+    sort = "name";
+  }
 
-    if(!order){
-        order = 'asc';
-    }
+  if (!order) {
+    order = "asc";
+  }
 
-    fetchProducts(sort,order,pageInt,minPrice,minRating)
-       .then(products => {
-           res.json(products);
-
-       })
-       .catch(err =>{
-           res.json(err.message);
-       });
-    
+  fetchProducts(sort, order, pageInt, q, minPrice, minRating)
+    .then((products) => {
+      res.json(products);
+    })
+    .catch((err) => {
+      res.json(err.message);
+    });
 };
-export {
-    getProducts
-}
+
+const getProductById = (req, res) => {
+  const { _id } = req.params;
+  fetchProductById(_id)
+    .then((products) => {
+      res.json(products);
+    })
+    .catch((err) => {
+      res.json(err.message);
+    });
+};
+export { getProducts, getProductById };

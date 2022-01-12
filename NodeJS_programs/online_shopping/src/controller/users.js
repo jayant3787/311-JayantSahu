@@ -1,11 +1,23 @@
 import { fetchUsers } from "../services/users.js";
 const getUsers = ( req, res ) => {
-    fetchUsers()
-       .then(users => {
+    let {sort,order,filRole,page} = req.query;
+    let pageInt = parseInt(page);
+
+    if(isNaN(page)){
+        pageInt = 1;
+    }
+    if(!sort){
+        sort = "name";
+    }
+    if(!order){
+        order = "asc";
+    }
+    fetchUsers(sort,order,filRole,page)
+       .then((users) => {
            res.json(users);
 
        })
-       .catch(err =>{
+       .catch((err) =>{
            res.json(err.message);
        });
     
