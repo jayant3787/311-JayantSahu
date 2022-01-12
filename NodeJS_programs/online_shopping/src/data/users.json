@@ -10,5 +10,16 @@
         "name" :"meghal",
         "email": "meghal@gmail.com",
         "password": "meg"
+    },
+    {
+        "name" :"shashank",
+        "email": "shk@gmail.com",
+        "password": "shk"
+
+    },
+    {
+        "name" :"rakesh",
+        "email": "rakesh@gmail.com",
+        "password": "rakya"
     }
 ]
