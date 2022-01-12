@@ -1,7 +1,14 @@
-
-import { fetchUsers } from "../services/users.cjs";
+import { fetchUsers } from "../services/users.js";
 const getUsers = ( req, res ) => {
-    res.json(fetchUsers());
+    fetchUsers()
+       .then(users => {
+           res.json(users);
+
+       })
+       .catch(err =>{
+           res.json(err.message);
+       });
+    
 };
 export {
     getUsers
