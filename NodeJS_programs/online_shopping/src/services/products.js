@@ -1,7 +1,6 @@
 /**
  * Service talks to the database (data layer)
  */
-//  const mongoose = require( 'mongoose' );
 import mongoose from 'mongoose';
 
  const Product = mongoose.model( 'Product' );
@@ -9,11 +8,6 @@ import mongoose from 'mongoose';
  const fetchProducts = () => {
      return Product.find();
  };
- 
-//  module.exports = {
-//      fetchProducts
-//  };
-
 export{
     fetchProducts
 }
