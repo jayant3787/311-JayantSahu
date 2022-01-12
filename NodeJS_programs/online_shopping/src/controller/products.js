@@ -1,7 +1,9 @@
 // import { fetchProducts } from "../services/products.cjs";
 import { fetchProducts } from "../services/products.js";
 const getProducts = ( req, res ) => {
-    fetchProducts()
+    const {sort, minPrice,minRating} = req.query;
+    console.log(sort, minPrice,minRating);
+    fetchProducts(sort,minPrice,minRating)
        .then(products => {
            res.json(products);
 

@@ -2,24 +2,28 @@
     {
         "name" :"jayant",
         "email": "jay@gmail.com",
-        "password": "jay"
+        "password": "jay",
+        "role":"admin"
 
     },
 
     {
         "name" :"meghal",
         "email": "meghal@gmail.com",
-        "password": "meg"
+        "password": "meg",
+        "role":"customer"
     },
     {
         "name" :"shashank",
         "email": "shk@gmail.com",
-        "password": "shk"
+        "password": "shk",
+        "role":"customer"
 
     },
     {
         "name" :"rakesh",
         "email": "rakesh@gmail.com",
-        "password": "rakya"
+        "password": "rakya",
+        "role":"customer"
     }
 ]
