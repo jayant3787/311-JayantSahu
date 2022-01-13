@@ -19,4 +19,20 @@ const fetchUsers = (sort, order, filRole, page) => {
     .limit(config.PAGE_SIZE);
 };
 
-export { fetchUsers };
+const fetchUserById = (_id) => {
+  return User.findById(_id);
+};
+
+const addUser = (user) =>{
+  return User.create(user);
+};
+const updateUser = ( _id, newUserDetails ) => {
+  return User.findByIdAndUpdate( _id, newUserDetails, { new: true } );
+};
+
+const removeUser = ( _id ) => {
+  return User.findByIdAndRemove( _id );
+};
+
+
+export { fetchUsers, fetchUserById, addUser, updateUser, removeUser };

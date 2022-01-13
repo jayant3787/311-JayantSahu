@@ -18,6 +18,9 @@ import express from 'express';
 import usersRouter from './routes/users.js';
 
 import indexRouter from './routes/pages/index.js';
+import productsPageRouter from './routes/pages/products.js';
+import usersPageRouter from './routes/pages/users.js';
+
 
 
 
@@ -56,6 +59,9 @@ app.use( '/users',usersRouter );
 app.use('/products',productsRouter);
 
 app.use( '/', indexRouter );
+app.use( '/page/products', productsPageRouter );
+app.use( '/page/users', usersPageRouter );
+
 
 
 app.use((req,res,next) => {
