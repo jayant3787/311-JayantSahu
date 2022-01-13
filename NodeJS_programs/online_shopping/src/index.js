@@ -17,8 +17,13 @@ import './data/index.js';
 import express from 'express';
 import usersRouter from './routes/users.js';
 import productsRouter from './routes/products.js'
-
 const app = express();
+
+// extract json data from request body
+
+app.use(express.json());
+app.use(express.urlencoded());
+
 
 app.use( usersRouter );
 app.use(productsRouter);

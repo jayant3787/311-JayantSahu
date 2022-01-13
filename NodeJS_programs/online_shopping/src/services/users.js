@@ -6,11 +6,9 @@ const User = mongoose.model("User");
 const fetchUsers = (sort, order, filRole, page) => {
   const skipClause = (page - 1) * config.PAGE_SIZE;
   const filterClause = {};
-//   const Role = filRole.toString();
+  //   const Role = filRole.toString();
   if (filRole) {
-    filterClause.role = {
-      filRole,
-    };
+    filterClause.role = filRole;
   }
   const sortClause = {
     [sort]: order === "desc" ? -1 : 1,

@@ -36,4 +36,13 @@ const getProductById = (req, res) => {
       res.json(err.message);
     });
 };
-export { getProducts, getProductById };
+
+//POST /products
+const postProduct = (req,res) =>{
+  const { body } = req;
+  console.log( body );
+  res.json({
+    message: 'Wait I will add...'
+  });
+};
+export { getProducts, getProductById, postProduct };
