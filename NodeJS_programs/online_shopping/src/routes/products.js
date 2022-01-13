@@ -3,11 +3,11 @@ import { getProducts, getProductById,postProduct,putProduct,deleteProduct} from 
 const router = express.Router();
 
 // Send a message when client requests for /products
-router.get( '/products', getProducts);
-router.get( '/products/:_id', getProductById);
-router.post( '/products', postProduct);
-router.put( '/products/:_id', putProduct);
-router.delete('/products/:_id',deleteProduct);
+router.get( '/', getProducts);
+router.get( '/:_id', getProductById);
+router.post( '/', postProduct);
+router.put( '/:_id', putProduct);
+router.delete('/:_id',deleteProduct);
 
 
 
