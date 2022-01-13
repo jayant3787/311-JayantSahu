@@ -41,4 +41,18 @@ const fetchProducts = (sort, order, page, q, minPrice, minRating) => {
 const fetchProductById = (_id) => {
   return Product.findById(_id);
 };
-export { fetchProducts, fetchProductById };
+
+const addProduct = (product) =>{
+  return Product.create(product);
+};
+const updateProduct = ( _id, newProductDetails ) => {
+  return Product.findByIdAndUpdate( _id, newProductDetails, { new: true } );
+};
+
+const removeProduct = ( _id ) => {
+  return Product.findByIdAndRemove( _id );
+};
+
+
+
+export { fetchProducts, fetchProductById,addProduct,updateProduct,removeProduct };
