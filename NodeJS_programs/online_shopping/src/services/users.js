@@ -23,16 +23,15 @@ const fetchUserById = (_id) => {
   return User.findById(_id);
 };
 
-const addUser = (user) =>{
+const addUser = (user) => {
   return User.create(user);
 };
-const updateUser = ( _id, newUserDetails ) => {
-  return User.findByIdAndUpdate( _id, newUserDetails, { new: true } );
+const updateUser = (_id, newUserDetails) => {
+  return User.findByIdAndUpdate(_id, newUserDetails, { new: true });
 };
 
-const removeUser = ( _id ) => {
-  return User.findByIdAndRemove( _id );
+const removeUser = (_id) => {
+  return User.findByIdAndRemove(_id);
 };
-
 
 export { fetchUsers, fetchUserById, addUser, updateUser, removeUser };
