@@ -18,7 +18,7 @@ const login = (req,res) => {
             role: user.role
         };
 
-        jwt.sign(claims, 'shh...', (err, token) => {
+        jwt.sign(claims, process.env.JWT_SECRET, (err, token) => {
             if(err){
                 const httpError = new HttpError('unable to generate token right now, please try again later.', 500);
                 next(httpError);

@@ -12,7 +12,8 @@
 //     }
 //     console.log(`started ${PORT}`);
 // });
-
+import dotenv from 'dotenv';
+dotenv.config();
 import './data/index.js';
 import express from 'express';
 import usersRouter from './routes/users.js';
