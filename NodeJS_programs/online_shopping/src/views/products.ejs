@@ -1,14 +1,28 @@
 <%- include( "header" ) -%>
 <h1 class="my-5">
-    List of Products
-    <br />
-    <small class="h4">The Awesome Online Store</small>
+  List of Products
+  <br />
+  <small class="h4">The Awesome Online Store</small>
 </h1>
-<div>
-   <b> We need to fetch and show a list of products</b>
-    <li>Washing Machine</li>
-    <li>Refrigerator</li>
-    <li>Sofa</li>
-    <li>Bed</li>
+<div class="row">
+  <b> show a list of products</b>
+  <% for( let i = 0; i < products.length; i++ ) { %>
+    <div class="col-12 col-lg-3 my-3">
+        <div class="card">
+            <img src="<%=products[i].imageUrl%>" class="card-img-top" style="width: 40%; margin: 0 auto;">
+            <div class="card-body">
+              <h5 class="card-title">
+                <%=products[i].name%>
+              </h5>
+              <div class="card-text">
+                <%=products[i].description%>
+              </div>
+              <a href="#" class="btn btn-primary">ADD TO CART</a>
+            </div>
+          </div>
+    </div>
+<% } %>
+  
 </div>
+
 <%- include( "footer" ) -%>

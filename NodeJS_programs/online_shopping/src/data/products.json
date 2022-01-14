@@ -7,7 +7,23 @@
     "description": "Leaf rake with 48-inch wooden handle.",
     "price": 19.95,
     "rating": 3.2,
-    "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+    "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png",
+    "reviews": [
+        {
+          "userId": "sjkbdcb2tgi",
+          "rating": 5,
+          "title": "Go for it!",
+          "reviewdOn": "2022-01-10",
+          "text": "It is a great product"
+        },
+        {
+          "userId": "sjkbdcb2tgi",
+          "rating": 3,
+          "title": "So so",
+          "reviewdOn": "2022-01-11",
+          "text": "It is an average product"
+        }
+      ]
   },
   {
     "id": 2,

@@ -1,6 +1,6 @@
 // import { fetchProducts } from "../services/products.cjs";
 import { json } from "express";
-import { fetchProducts, fetchProductById,addProduct,updateProduct,removeProduct } from "../services/products.js";
+import { fetchProducts, fetchProductById,addProduct,updateProduct,removeProduct, addReview } from "../services/products.js";
 import HttpError from "../utils/HttpError.js";
 const getProducts = (req, res) => {
   let { sort, order, minPrice, minRating, page, q } = req.query;
@@ -126,4 +126,28 @@ const deleteProduct = ( req, res, next ) => {
     });
 };
 
-export { getProducts, getProductById, postProduct,putProduct,deleteProduct };
+//POST /:_id/reviews
+const postReview = (req, res,next) => {
+  const { _id } = req.params;
+
+  const { body } = req;
+  console.log(Object.keys( body ));
+  // check if the body is an empty object
+  if( Object.keys( body ).length === 0 ) {
+    const httpError = new HttpError( 'Request body is empty. Review details are missing.', 400 );
+    next( httpError );
+    return;
+  }
+
+  addReview(_id,body)
+    .then((product) => {
+      res.status(201).json(product);
+    })
+    .catch((err) => {
+      const httpError = new HttpError( err.message, 400 );
+      next( httpError );
+    });
+};
+
+
+export { getProducts, getProductById, postProduct,putProduct,deleteProduct, postReview };

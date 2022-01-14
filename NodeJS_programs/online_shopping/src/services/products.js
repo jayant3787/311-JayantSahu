@@ -46,13 +46,26 @@ const addProduct = (product) =>{
   return Product.create(product);
 };
 const updateProduct = ( _id, newProductDetails ) => {
-  return Product.findByIdAndUpdate( _id, newProductDetails, { new: true } );
+  return Product.findByIdAndUpdate( _id, newProductDetails, { new: true , runValidators:true} );
 };
 
 const removeProduct = ( _id ) => {
   return Product.findByIdAndRemove( _id );
 };
 
+const addReview = (_id,review)=>{
+  return Product.findByIdAndUpdate(_id,{
+    $push:{
+      reviews:review
+    }
+  },
+  {
+    new:true,
+    runValidators:true
+  }
+  );
+
+};
 
 
-export { fetchProducts, fetchProductById,addProduct,updateProduct,removeProduct };
+export { fetchProducts, fetchProductById,addProduct,updateProduct,removeProduct, addReview };

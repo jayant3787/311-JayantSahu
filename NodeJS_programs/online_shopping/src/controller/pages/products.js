@@ -1,5 +1,12 @@
+import {fetchProducts} from '../../services/products.js'
+
 const getProductsPage = ( req, res, next ) => {
-    res.render( 'products' );
+    fetchProducts()
+    .then(products => {
+        res.render('products',{
+            products:products
+        })
+    })
 };
 
 export {
