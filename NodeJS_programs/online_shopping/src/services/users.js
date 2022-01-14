@@ -13,7 +13,9 @@ const fetchUsers = (sort, order, filRole, page) => {
   const sortClause = {
     [sort]: order === "desc" ? -1 : 1,
   };
-  return User.find(filterClause)
+  return User
+    .find(filterClause)
+    .select('name email role') // or -password we can do instead of passing these 3
     .sort(sortClause)
     .skip(skipClause)
     .limit(config.PAGE_SIZE);

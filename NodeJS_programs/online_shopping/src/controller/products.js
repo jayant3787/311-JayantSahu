@@ -1,6 +1,6 @@
 // import { fetchProducts } from "../services/products.cjs";
 import { json } from "express";
-import { fetchProducts, fetchProductById,addProduct,updateProduct,removeProduct, addReview } from "../services/products.js";
+import { fetchProducts, fetchProductById,addProduct,updateProduct,removeProduct, addReview ,fetchReviews } from "../services/products.js";
 import HttpError from "../utils/HttpError.js";
 const getProducts = (req, res) => {
   let { sort, order, minPrice, minRating, page, q } = req.query;
@@ -149,5 +149,18 @@ const postReview = (req, res,next) => {
     });
 };
 
+const getReviews = (req, res, next) => {
+  const { _id } = req.params;
 
-export { getProducts, getProductById, postProduct,putProduct,deleteProduct, postReview };
+  fetchReviews( _id )
+    .then((reviews) => {
+        res.json(reviews);
+    })
+    .catch((err) => {
+        const httpError = new HttpError( err.message, 500 );
+        next( httpError );
+    });
+}
+
+
+export { getProducts, getProductById, postProduct,putProduct,deleteProduct, postReview,getReviews };

@@ -26,6 +26,7 @@ import usersPageRouter from './routes/pages/users.js';
 
 import productsRouter from './routes/products.js'
 import HttpError from './utils/HttpError.js';
+import authRouter from './routes/auth.js';
 import fs from 'fs';
 import path from 'path';
 const app = express();
@@ -54,7 +55,7 @@ app.use( express.static( path.join( process.cwd(), 'src', 'public' ) ) );
 app.use(express.json());
 app.use(express.urlencoded());
 
-
+app.use('/auth', authRouter);
 app.use( '/users',usersRouter );
 app.use('/products',productsRouter);
 

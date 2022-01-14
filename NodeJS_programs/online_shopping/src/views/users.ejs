@@ -4,10 +4,10 @@
     <br />
     <small class="h4">The Awesome Online Store for all users</small>
 </h1>
-<div>
+<div class="row">
    <b> We need to fetch and show a list of the users</b>
    <% for( let i = 0; i < users.length; i++ ) { %>
-    <div><%= users[i].name %></div>
+    <div class="col-12 col-lg-2 my-3"><%= users[i].name %></div>
     <% } %>
 </div>
 <%- include( "footer" ) -%>

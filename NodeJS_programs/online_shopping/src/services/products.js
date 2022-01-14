@@ -32,7 +32,9 @@ const fetchProducts = (sort, order, page, q, minPrice, minRating) => {
   const sortClause = {
     [sort]: order === "desc" ? -1 : 1,
   };
-  return Product.find(filterClause)
+  return Product
+    .find(filterClause)
+    .select('name code releasedate description price rating imageUrl')
     .sort(sortClause)
     .skip(skipClause)
     .limit(config.PAGE_SIZE);
@@ -67,5 +69,12 @@ const addReview = (_id,review)=>{
 
 };
 
+const fetchReviews = ( _id ) => {
+  return Product
+          .findById( _id )
+          .select( 'reviews' )
+          .then(productReviews => productReviews.reviews)
+}
 
-export { fetchProducts, fetchProductById,addProduct,updateProduct,removeProduct, addReview };
+
+export { fetchProducts, fetchProductById,addProduct,updateProduct,removeProduct, addReview, fetchReviews };

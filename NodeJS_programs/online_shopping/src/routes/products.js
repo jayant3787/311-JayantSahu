@@ -1,15 +1,22 @@
 import express from 'express';
-import { getProducts, getProductById,postProduct,putProduct,deleteProduct,postReview} from '../controller/products.js';
+import { getProducts, getProductById,postProduct,putProduct,deleteProduct,postReview,getReviews} from '../controller/products.js';
+import { authenticate } from '../middleware/auth.js';
 const router = express.Router();
 
 // Send a message when client requests for /products
 router.get( '/', getProducts);
 router.get( '/:_id', getProductById);
-router.post( '/', postProduct);
-router.put( '/:_id', putProduct);
-router.delete('/:_id',deleteProduct);
 
-router.post('/:_id/reviews', postReview);
+// logged-in user
+router.post( '/',authenticate, postProduct);
+router.put( '/:_id',authenticate, putProduct);
+router.delete('/:_id',authenticate, deleteProduct);
+
+// any user
+router.get('/:_id/reviews', getReviews)
+
+// loggged-in user
+router.post('/:_id/reviews',authenticate, postReview);
 
 
 
