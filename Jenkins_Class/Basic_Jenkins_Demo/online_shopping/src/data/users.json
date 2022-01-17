@@ -1,0 +1,57 @@
+[
+    {
+        "name" :"jayant",
+        "email": "jay@gmail.com",
+        "password": "jay",
+        "role":"admin"
+
+    },
+
+    {
+        "name" :"meghal",
+        "email": "meghal@gmail.com",
+        "password": "meg",
+        "role":"customer"
+    },
+    {
+        "name" :"shashank",
+        "email": "shk@gmail.com",
+        "password": "shk",
+        "role":"customer"
+
+    },
+    {
+        "name" :"rakesh",
+        "email": "rakesh@gmail.com",
+        "password": "rakya",
+        "role":"customer"
+    },
+
+    {
+        "name" :"sagar",
+        "email": "sagar@gmail.com",
+        "password": "bittu",
+        "role":"customer"
+    },
+
+    {
+        "name" :"pooja",
+        "email": "pooja@gmail.com",
+        "password": "poo",
+        "role":"customer"
+    },
+
+    {
+        "name" :"santosh",
+        "email": "santosh@gmail.com",
+        "password": "sandi",
+        "role":"customer"
+    },
+
+    {
+        "name" :"yashika",
+        "email": "yashika@gmail.com",
+        "password": "yashi",
+        "role":"customer"
+    }
+]

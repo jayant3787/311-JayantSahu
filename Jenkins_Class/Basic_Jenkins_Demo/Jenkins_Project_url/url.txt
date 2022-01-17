@@ -1,0 +1,3 @@
+JENKINS:      http://localhost:8085/job/shoppingDemo/
+
+Github Webhook :    https://github.com/jayant3787/jenkins_devops_demo/settings/hooks
