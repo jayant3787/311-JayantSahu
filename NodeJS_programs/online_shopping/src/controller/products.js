@@ -39,7 +39,7 @@ const getProductById = (req, res, next) => {
         next( httpError );
         return;
     }
-    res,json(products)
+    res.json(products)
     })
     .catch((err) => {
       if( err.kind === 'ObjectId' ) {

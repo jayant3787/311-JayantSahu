@@ -13,7 +13,7 @@ router.put( '/:_id',authenticate,authorize(['admin']), putProduct);
 router.delete('/:_id',authenticate,authorize(['admin']), deleteProduct);
 
 // any user
-router.get('/:_id/reviews', getReviews)
+router.get('/:_id/reviews', getReviews);
 
 // loggged-in user
 router.post('/:_id/reviews',authenticate,authorize(['customer']), postReview);
