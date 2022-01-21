@@ -7,7 +7,7 @@
 <div class="row">
    <b> We need to fetch and show a list of the users</b>
    <% for( let i = 0; i < users.length; i++ ) { %>
-    <div class="col-12 col-lg-2 my-3"><%= users[i].name %></div>
+    <div class="col-12 col-lg-2 my-3">Name: <%= users[i].name %>  Email:<%= users[i].email %></div>
     <% } %>
 </div>
 <%- include( "footer" ) -%>

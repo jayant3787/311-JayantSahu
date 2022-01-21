@@ -1,17 +1,3 @@
-// import express from 'express';
-// const app = express();
-// app.get('/users', (req,res) =>{
-//     res.send("we will send the list of the users:  jayant,meghal,rakesh,shashank")
-
-// })
-// const PORT = process.env.PORT || 4000;
-// app.listen(PORT, err =>{
-//     if(err){
-//         console.log(error.message);
-//         return;
-//     }
-//     console.log(`started ${PORT}`);
-// });
 import dotenv from 'dotenv';
 dotenv.config();
 import './data/index.js';
