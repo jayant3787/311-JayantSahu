@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>EMPLOYEE DETAILS DEMO</title>
+    <script
+      type="application/javascript"
+      src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"
+    ></script>
+    <script
+      type="application/javascript"
+      src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"
+    ></script>
+    <script
+      type="application/javascript"
+      src="https://unpkg.com/babel-standalone@6.26.0/babel.js"
+    ></script>
+  </head>
+
+  <body>
+    <div id="emp"></div>
+    <div id="emp1"></div>
+    <div id="emp2"></div>
+    <div id="emp3"></div>
+
+    <script type="text/babel">
+      // Obtain the root
+      // const rootElement = document.getElementById('root')
+      // Create a ES6 class component
+      class Employee extends React.Component {
+        // Use the render function to return JSX component
+        render() {
+          return (
+            <div>
+              <h1>Employee Detail Fields</h1>
+              <ul>
+                <li>ID</li>
+                <li>NAME</li>
+                <li>AGE</li>
+                <li>GENDER</li>
+                <li>ORGANIZATION</li>
+                <li>SALARY</li>
+              </ul>
+              <h2>
+                ********************Details of all the employees are displayed
+                below********************
+              </h2>
+            </div>
+          );
+        }
+      }
+
+      // Use the ReactDOM.render to show your component on the browser
+      ReactDOM.render(<Employee />, document.getElementById("emp"));
+
+      class Person extends React.Component {
+        render() {
+          var a = this.props.id;
+          var b = this.props.name;
+          var c = this.props.age;
+          var d = this.props.gender;
+          var e = this.props.organization;
+          var f = this.props.salary;
+
+          return (
+            <h3 style={{color: 'blue'}}>
+              ID : {a}
+              <br />
+              Name : {b}
+              <br />
+              AGE : {c}
+              <br />
+              GENDER : {d}
+              <br />
+              ORGANIZATION : {e}
+              <br />
+              SALARY : {f}
+              <br />
+              <br />
+            </h3>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <Person
+          id="101"
+          name="Jayant Sahu"
+          age="25"
+          gender="Male"
+          organization="Collabera INC"
+          salary="650000/-"
+        />,
+        document.getElementById("emp1")
+      );
+      ReactDOM.render(
+        <Person
+          id="102"
+          name="Meghal Chharbia"
+          age="28"
+          gender="Male"
+          organization="Nokia Networks"
+          salary="900000/-"
+        />,
+        document.getElementById("emp2")
+      );
+      ReactDOM.render(
+        <Person
+          id="103"
+          name="Shashank S"
+          age="27"
+          gender="Male"
+          organization="Lekha Wireless Solutions"
+          salary="700000/-"
+        />,
+        document.getElementById("emp3")
+      );
+    </script>
+  </body>
+</html>
