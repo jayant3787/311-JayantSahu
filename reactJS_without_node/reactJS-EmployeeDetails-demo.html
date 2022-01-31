@@ -24,6 +24,9 @@
     <div id="emp1"></div>
     <div id="emp2"></div>
     <div id="emp3"></div>
+    <div id="emp4"></div>
+    <div id="emp5"></div>
+
 
     <script type="text/babel">
       // Obtain the root
@@ -69,6 +72,11 @@
 
 
       class Person extends React.Component {
+        // Default props
+        static defaultProps = {
+          'gender' : "Female",
+          'nationality' : ['Indian']
+        }
         render() {
           var a = this.props.id;
           var b = this.props.fname;
@@ -167,6 +175,34 @@
           qualification={j}
         />,
         document.getElementById("emp3")
+      );
+
+      ReactDOM.render(
+        <Person
+          id="104"
+          fname="Yashika"
+          lname="Ruprela"
+          age="27"
+          organization="Deloitte"
+          salary="750000/-"
+          interests={i}
+          qualification={j}
+        />,
+        document.getElementById("emp4")
+      );
+
+      ReactDOM.render(
+        <Person
+          id="105"
+          fname="Pooja"
+          lname="Sahu"
+          age="23"
+          organization="Collabera INC"
+          salary="650000/-"
+          interests={i}
+          qualification={j}
+        />,
+        document.getElementById("emp5")
       );
     </script>
   </body>
