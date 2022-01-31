@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iterators And Generators Demo</title>
+</head>
+
+<body>
+    <script>
+        let range = {
+            from: 1,
+            to: 5,
+
+            [Symbol.iterator]() {
+                this.current = this.from;
+                return this;
+            },
+
+            next() {
+                if (this.current <= this.to) {
+                    return { done: false, value: this.current++ };
+                } else {
+                    return { done: true };
+                }
+            }
+        };
+
+        for (let num of range) {
+            alert(num); // 1, then 2, 3, 4, 5
+        }
+    </script>
+
+    <script>
+        // Generators
+        class Apple{
+            constructor(n,c,y){
+                this.name = n;
+                this.color = c;
+                this.year = y;
+            }
+        }
+
+        const aGeneratorObject = function* () {
+            yield new Apple("A1", "red", 2001);
+            yield new Apple("A2", "red", 2002);
+            yield new Apple("A3", "red", 2003);
+        }();
+
+        alert(aGeneratorObject.next().value.name);
+        alert(aGeneratorObject.next().value.name);
+        alert(aGeneratorObject.next().value.name);
+
+
+
+    </script>
+</body>
+
+</html>
