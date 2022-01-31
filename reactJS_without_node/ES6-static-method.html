@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static method Demo</title>
+</head>
+<body>
+    <script>
+        class Apple{
+            static exportYear = 2000;
+            constructor(n,c,y){
+                this.name = n;
+                this.color = c;
+                this.year = y;
+            }
+            static f1 = () =>{
+                alert("Inside function F1");
+            }
+        };
+        Apple.f1();
+        var apple1 = new Apple("Kashmir Apple", "red", 1996);
+        var apple2 = new Apple("Shimla Apple", "rose", 1997);
+
+        alert("1 "+apple1.name);
+        alert("2 "+apple2.name);
+
+        alert("1 year"+apple1.exportYear);
+        alert("12 year"+apple2.exportYear);
+        alert("13 year"+Apple.exportYear);
+
+        
+
+
+
+
+        apple1.name = "Jammu";
+
+        alert("1 "+apple1.name);
+        alert("2 "+apple2.name);
+
+        Apple.exportyear= 2020;
+
+        alert("1 year"+apple1.exportYear);
+        alert("12 year"+apple2.exportYear);
+        alert("13 year"+Apple.exportYear);
+
+
+
+    </script>
+</body>
+</html>

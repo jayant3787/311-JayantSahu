@@ -78,15 +78,17 @@
           'nationality' : ['Indian']
         }
         render() {
-          var a = this.props.id;
-          var b = this.props.fname;
-          var c = this.props.lname;
-          var d = this.props.age;
-          var e = this.props.gender;
-          var f = this.props.organization;
-          var g = this.props.salary;
-          var h = this.props.nationality[0];
-          // alert(this.props.interests);
+          //object destructuring
+          const { id,fname,lname,age,gender,organization,salary,nationality, qualification, interests} = this.props;
+
+          var a = id;
+          var b = fname;
+          var c = lname;
+          var d = age;
+          var e = gender;
+          var f = organization;
+          var g = salary;
+          var h = nationality[0];
 
           return (
             <h3>
@@ -109,14 +111,14 @@
               <hr />
               QUALIFICATION:
               <ul>
-                {Array.from(this.props.qualification).map((item) => (
+                {Array.from(qualification).map((item) => (
                   <li>{item}</li>
                 ))}
               </ul>
               <hr />
               INTERESTS:
               <ul>
-                {Array.from(this.props.interests).map((item) => (
+                {Array.from(interests).map((item) => (
                   <li>{item}</li>
                 ))}
               </ul>
