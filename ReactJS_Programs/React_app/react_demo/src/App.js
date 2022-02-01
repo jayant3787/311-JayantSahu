@@ -7,6 +7,8 @@ import User2 from "./components/User2";
 import Address from "./components/Address";
 import Hobby from "./components/Hobby";
 import Qualification from "./components/Qualification"
+import ScoreBoard from "./components/ScoreBoard";
+import Player from "./components/Player";
 
 function App() {
   return (
@@ -36,6 +38,10 @@ function App() {
           mName="Uma"
           email="abc@gmail.com"
         />
+        <ScoreBoard >
+          <Player name="virat" score={50} />
+          <Player name="Rohit"  score={60}/>
+        </ScoreBoard>
 
         {/* //user 2 component is coded such a way that it will render all the children component 
             //therefore we can pass any number(even zero) of hobby,qualification,address

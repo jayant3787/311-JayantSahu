@@ -19,7 +19,7 @@ changePopularity = () => {
   };
   render() {
     return (
-      <div>
+      <div style={{border:"5px solid orange"}}>
         <img src={this.props.image} alt="Profile img " />
         <h2>
           My Name Is {this.state.name} and my age is {this.state.age} and phone
