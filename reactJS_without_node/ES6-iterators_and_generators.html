@@ -33,7 +33,11 @@
         }
     </script>
 
+
+
+
     <script>
+
         // Generators
         class Apple{
             constructor(n,c,y){
@@ -45,13 +49,13 @@
 
         const aGeneratorObject = function* () {
             yield new Apple("A1", "red", 2001);
-            yield new Apple("A2", "red", 2002);
-            yield new Apple("A3", "red", 2003);
+            yield new Apple("A2", "blue", 2002);
+            yield new Apple("A3", "green", 2003);
         }();
 
         alert(aGeneratorObject.next().value.name);
-        alert(aGeneratorObject.next().value.name);
-        alert(aGeneratorObject.next().value.name);
+        alert(aGeneratorObject.next().value.color);
+        alert(aGeneratorObject.next().value.year);
 
 
 

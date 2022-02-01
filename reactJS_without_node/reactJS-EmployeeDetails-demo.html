@@ -61,6 +61,7 @@
 
       // Use the ReactDOM.render to show your component on the browser
       ReactDOM.render(<Employee />, document.getElementById("emp"));
+
       var i = new Set();
       i.add("Cricket");
       i.add("Football");
@@ -72,12 +73,14 @@
 
 
       class Person extends React.Component {
+        
         // Default props
         static defaultProps = {
           'gender' : "Female",
           'nationality' : ['Indian']
         }
         render() {
+
           //object destructuring
           const { id,fname,lname,age,gender,organization,salary,nationality, qualification, interests} = this.props;
 
