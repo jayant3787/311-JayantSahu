@@ -15,7 +15,7 @@ class Person extends Component {
   }
 
 changePopularity = () => {
-    this.setState(()=>({popRating:this.state.popRating+1}));
+    this.setState((state,props)=>({popRating:this.state.popRating+1}));
   };
   render() {
     return (
