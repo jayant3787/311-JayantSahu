@@ -5,12 +5,16 @@ class Player extends Component{
     super(props);
 
     this.state={
+      lastScore:0,
       score:props.score
     }
   }
 
+
   f1 =()=>{
-    this.setState({score:this.state.score+Math.floor(Math.random()*10)})
+    let tempScore = Math.floor(Math.random()*10)
+    this.setState({score:this.state.score+tempScore,lastScore:tempScore})
+
   };
     render(){
         return(
