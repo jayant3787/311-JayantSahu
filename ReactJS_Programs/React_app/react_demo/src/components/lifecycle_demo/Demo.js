@@ -40,7 +40,7 @@ class LifeCycleDemo extends Component {
     //updating
     shouldComponentUpdate(nextProps, nextState) {
         console.log("Inside shouldComponentUpdate");
-        if (this.state.name.indexOf("5") != -1) return true;
+        if (this.state.name.indexOf("5") !== -1) return true;
         else return false;
     }
     getSnapshotBeforeUpdate(prevProps, prevState) {

@@ -12,6 +12,7 @@ import LifeCycleDemo from "./components/lifecycle_demo/Demo";
 import Fruits from "./components/context-demo/Fruit";
 import FruitContext from "./components/context-demo/FruitContext";
 import Greeting from "./components/functionalComponent_demo/Greeting";
+import GreetingES6 from "./components/functionalComponent_demo/GreetingES6";
 // import Player from "./components/Player";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
     <FruitContext.Provider value={{x:2,y:5}}>
     {/* functional coponent */}
     <Greeting name="Jayant Sahu"/>
+    <GreetingES6 name="JAYANT"/>
 
     <div className="App">
       <header className="App-header">
