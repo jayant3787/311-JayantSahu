@@ -9,10 +9,18 @@ import Hobby from "./components/Hobby";
 import Qualification from "./components/Qualification"
 import ScoreBoard from "./components/scoreboard/ScoreBoard";
 import LifeCycleDemo from "./components/lifecycle_demo/Demo";
+import Fruits from "./components/context-demo/Fruit";
+import FruitContext from "./components/context-demo/FruitContext";
+import Greeting from "./components/functionalComponent_demo/Greeting";
 // import Player from "./components/Player";
 
 function App() {
   return (
+    
+    <FruitContext.Provider value={{x:2,y:5}}>
+    {/* functional coponent */}
+    <Greeting name="Jayant Sahu"/>
+
     <div className="App">
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
@@ -44,6 +52,7 @@ function App() {
           {/* <Player name="Rohit"  score={80}/> */}
         </ScoreBoard>
         <LifeCycleDemo name="Jay"/>
+        <Fruits />
 
         {/* //user 2 component is coded such a way that it will render all the children component 
             //therefore we can pass any number(even zero) of hobby,qualification,address
@@ -65,6 +74,8 @@ function App() {
         </User2>
       </header>
     </div>
+    </FruitContext.Provider>
+
   );
 }
 

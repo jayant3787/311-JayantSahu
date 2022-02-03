@@ -24,6 +24,7 @@ class ScoreBoard extends Component {
 
     var lastScore1 = this.ref1.current.state.lastScore;
     var lastScore2 = this.ref2.current.state.lastScore;
+
     this.ref4.current.setState((state,props)=>({commentary:`${this.ref1.current.props.name} scored runs ${lastScore1} and ${this.ref2.current.props.name} scored runs ${lastScore2}`}))
 
 
@@ -52,8 +53,8 @@ class ScoreBoard extends Component {
     return (
       <div style={{ border: "5px solid orange" }}>
         <h1>
-          **********SCOREBOARD**********
-          <br />
+          <b>**********SCOREBOARD**********</b>
+          <hr/>
           INDIA</h1>
           <Player name="Virat" ref={this.ref1} score={0} someFunc={this.f2} />
           <Player name="Rohit" ref={this.ref2} score={0} someFunc={this.f2}/>

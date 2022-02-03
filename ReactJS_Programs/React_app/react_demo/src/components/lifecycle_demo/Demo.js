@@ -31,8 +31,8 @@ class LifeCycleDemo extends Component {
                 <hr />
                 Life cycle demo component
                 <hr />
-                Hello My Name Is {this.state.name}
-                <button onClick={this.f1}>Change name</button>
+                Hello My Name Is {this.state.name}<br/>
+                <button onClick={this.f1}>Change name</button><br/>
                 <a href="test.html"> click to go test.html</a>
             </div>
         );
