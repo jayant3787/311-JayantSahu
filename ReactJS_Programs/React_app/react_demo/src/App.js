@@ -13,6 +13,7 @@ import Fruits from "./components/context-demo/Fruit";
 import FruitContext from "./components/context-demo/FruitContext";
 import Greeting from "./components/functionalComponent_demo/Greeting";
 import GreetingES6 from "./components/functionalComponent_demo/GreetingES6";
+import PersonComponent from "./components/functionalComponent_demo/PersonComponent";
 // import Player from "./components/Player";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     {/* functional coponent */}
     <Greeting name="Jayant Sahu"/>
     <GreetingES6 name="JAYANT"/>
+    <PersonComponent name="Virat Kohli"/>
 
     <div className="App">
       <header className="App-header">

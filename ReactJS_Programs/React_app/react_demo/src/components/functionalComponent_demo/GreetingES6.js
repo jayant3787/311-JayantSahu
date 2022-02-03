@@ -10,17 +10,27 @@ const GreetingES6 = (props) => {
     // }
 
     // Hooks usage demo
-    var initialAge = 25
+    var initialAge = 24
+
     const [age, setAge] = useState(initialAge);
-    // setAge = () =>{
-    //     age++;
-    // }
     
+    const changeAge = () => {
+        if (age % 5 === 0)
+            setAge(age + 5);
+        else
+            setAge(age + 1);
+    }
+
 
 
     return (
-        <div>HELLO I AM  {props.name} and MY AGE IS {age}<br/>
-        <button onClick={()=>setAge(age+1)}>Change Age</button>
+        <div>HELLO I AM  {props.name} and I AM {age}<br />
+
+            {/* 1st way */}
+            <button onClick={() => setAge(age + 1)}>Change Age</button><br/>
+            {/* 2nd way */}
+            <button onClick={changeAge}>Change Age by 5  if it is div by 5 otherwise 1 </button>
+
         </div>
     );
 }
