@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HTML content rendering test suit score board is same or not 1`] = `
+<HelloWorld>
+  <p>
+    Aloha
+  </p>
+</HelloWorld>
+`;

@@ -54,8 +54,7 @@ class ScoreBoard extends Component {
       <div style={{ border: "5px solid orange" }}>
         <h1>
           <b>**********SCOREBOARD**********</b>
-          <hr/>
-          INDIA</h1>
+          <hr/>INDIA</h1>
           <Player name="Virat" ref={this.ref1} score={0} someFunc={this.f2} />
           <Player name="Rohit" ref={this.ref2} score={0} someFunc={this.f2}/>
           <Message ref={this.ref3}/>
