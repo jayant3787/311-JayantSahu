@@ -1,8 +1,13 @@
-import { render, screen } from '@testing-library/react';
 import App from './App';
+import React from 'react';
+import ShallowRenderer from 'react-test-renderer/shallow'
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+const renderer = new ShallowRenderer();
+
+test('two plus two is four', () =>{
+  expect(2+2).toBe(4);
+});
+
+test("check app comes without any issues", () =>{
+  renderer.render(<App />);
 });
