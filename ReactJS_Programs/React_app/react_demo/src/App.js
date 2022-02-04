@@ -15,6 +15,7 @@ import Greeting from "./components/functionalComponent_demo/Greeting";
 import GreetingES6 from "./components/functionalComponent_demo/GreetingES6";
 import PersonComponent from "./components/functionalComponent_demo/PersonComponent";
 import ScoreBoardComponent from "./components/functionalComponent_demo/ScoreboardComponent";
+import HelloWorld from "./PureComp-demo"
 // import Player from "./components/Player";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
     <GreetingES6 name="JAYANT"/>
     <PersonComponent name="Virat Kohli"/>
     <ScoreBoardComponent />
+    <HelloWorld />
 
     <div className="App">
       <header className="App-header">
@@ -40,9 +42,7 @@ function App() {
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          Click here to Learn React
-        </a>
+        ><h4>Click here to Learn React</h4></a>
         <User name="Jayant" />
         <User name="Meghal" />
         <Person

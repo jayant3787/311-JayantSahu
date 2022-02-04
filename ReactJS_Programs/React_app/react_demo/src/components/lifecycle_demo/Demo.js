@@ -28,9 +28,7 @@ class LifeCycleDemo extends Component {
         console.log("Inside render");
         return (
             <div style={{ border: "5px solid orange" }}>
-                <hr />
-                Life cycle demo component
-                <hr />
+                <hr /><p>Life cycle demo component</p><hr />
                 Hello My Name Is {this.state.name}<br/>
                 <button onClick={this.f1}>Change name</button><br/>
                 <a href="test.html"> click to go test.html</a>
