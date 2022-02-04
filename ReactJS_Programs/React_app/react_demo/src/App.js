@@ -16,12 +16,22 @@ import GreetingES6 from "./components/functionalComponent_demo/GreetingES6";
 import PersonComponent from "./components/functionalComponent_demo/PersonComponent";
 import ScoreBoardComponent from "./components/functionalComponent_demo/ScoreboardComponent";
 import HelloWorld from "./PureComp-demo"
+import MyEvent from "./components/event-handling-demo/MyEvent";
+import FormDemo from "./components/form-handling/FormDemo";
 // import Player from "./components/Player";
 
 function App() {
   return (
     
     <FruitContext.Provider value={{x:2,y:5}}>
+
+    {/* event handling */}
+
+    <MyEvent />
+    <FormDemo />
+
+
+
     {/* functional coponent */}
     <Greeting name="Jayant Sahu"/>
     <GreetingES6 name="JAYANT"/>
@@ -45,7 +55,7 @@ function App() {
         ><h4>Click here to Learn React</h4><br />
         <h4>HOLA</h4>
         <h2 id="myH2">HI</h2>
-        
+
         </a>
         <User name="Jayant" />
         <User name="Meghal" />

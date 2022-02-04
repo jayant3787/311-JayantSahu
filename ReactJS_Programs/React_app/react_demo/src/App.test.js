@@ -8,6 +8,9 @@ import ScoreBoard from "./components/scoreboard/ScoreBoard";
 import HelloWorld from './PureComp-demo';
 import toJson from 'enzyme-to-json';
 import Player from './components/Player';
+// import sinon from 'sinon';
+import MyEvent from './components/event-handling-demo/MyEvent';
+
 
 configure({ adapter: new Adapter() });
 
@@ -88,9 +91,7 @@ describe('HTML content rendering test suit', () => {
 describe('h2 element rendering test suit', () => {
   test('app renders find the element by id', () => {
     var wrapper = mount(<App />);
-
     const findH2 = wrapper.find('#myH2');
-    console.log("hello find h2" + findH2);
     expect(findH2.contains("HI")).toEqual(true);
   });
 
@@ -99,11 +100,28 @@ describe('h2 element rendering test suit', () => {
     expect((wrapper.text()).indexOf("HI") !== -1).toEqual(true);
   });
 
+  // i am passing the props hence keeping true to pass
   test('app renders props are passed or not', () => {
     var wrapper = mount(<Player name="jayu" />);
     expect(wrapper.contains("jayu")).toEqual(true);
   });
+
+  //not passing the props hence keeping false to pass
+  test('app renders props are passed', () => {
+    var wrapper = mount(<Player />);
+    expect(wrapper.contains("jayu")).toEqual(false);
+  });
 });
+
+
+test('simulates submit events', () => {
+  // const onButtonSubmit = sinon.spy();
+  const wrapper = shallow(<MyEvent />);
+  wrapper.find('#btn3').simulate('click');
+  console.log("simulate test case"+wrapper.text());
+  expect(wrapper.contains("25")).toEqual(true);
+});
+
 
 
 
