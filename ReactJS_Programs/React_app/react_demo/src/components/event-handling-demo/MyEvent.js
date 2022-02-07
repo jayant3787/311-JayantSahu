@@ -26,10 +26,10 @@ const MyEvent = () => {
 
 
     }
-    const [age,setAge] = useState(0);
+    const [age,setAge] = useState(5);
 
     const handleEvent3 = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         setAge(25);
     }
 

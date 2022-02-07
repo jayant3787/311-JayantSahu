@@ -118,8 +118,7 @@ test('simulates submit events', () => {
   // const onButtonSubmit = sinon.spy();
   const wrapper = shallow(<MyEvent />);
   wrapper.find('#btn3').simulate('click');
-  console.log("simulate test case"+wrapper.text());
-  expect(wrapper.contains("25")).toEqual(true);
+  expect((wrapper.text()).indexOf("age : 25") !== -1).toEqual(true);
 });
 
 
