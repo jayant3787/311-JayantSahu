@@ -1,5 +1,7 @@
 import { useRef } from "react";
 
+
+// Uncontrolled component form demo
 const FormDemo = () =>{
 
     const refAge = useRef();
@@ -10,9 +12,11 @@ const FormDemo = () =>{
            }
 
     return(
-        <div style={{border:"3px solid red"}}><br/>
+        <div style={{border:"3px solid red"}}>
+            UnControlled Form Demo: 
+        <br/>
             <form id="frm1" name="form4" action="process.php">
-                <input type="text" name="age" ref={refAge}/>
+                Enter Age : <input type="text" name="age" ref={refAge}/>
                 <button type="submit" name="button4" onClick={handleEvent}>submit</button>
             </form><br/>
         </div>

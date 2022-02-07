@@ -4,13 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import User from './components/User'
+import {BrowserRouter} from "react-router-dom"
 
 ReactDOM.render(
   <React.StrictMode>
-  <div>
+  <BrowserRouter>
     <App />
     <User name="Pooja sahu" />
-    </div>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

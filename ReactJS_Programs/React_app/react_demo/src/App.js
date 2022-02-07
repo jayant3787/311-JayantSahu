@@ -18,17 +18,59 @@ import ScoreBoardComponent from "./components/functionalComponent_demo/Scoreboar
 import HelloWorld from "./PureComp-demo"
 import MyEvent from "./components/event-handling-demo/MyEvent";
 import FormDemo from "./components/form-handling/FormDemo";
+import ControlledComponentFormDemo from "./components/form-handling/ControlledComponentFormDemo";
+import ControlledComponentFormDemoWithMoreFormElements from "./components/form-handling/ControlledComponentFormDemoWithMoreFormElements";
+import PlayerRegistration from "./components/form-handling/PlayerRegistration";
+import { Route, Routes } from "react-router";
+import { Link } from "react-router-dom";
 // import Player from "./components/Player";
 
+
 function App() {
+  return(
+  <Routes>
+      <Route path="/" element={<Home />}/>
+      <Route path="/apps" element={<App1 />}/>
+      <Route path="/form-demos" element={<PlayerRegistration />}/>
+      <Route path="/form-demos1" element={<ControlledComponentFormDemo />}/>
+      <Route path="/form-demos2" element={<ControlledComponentFormDemoWithMoreFormElements />}/>
+      <Route path="/form-demos3" element={<FormDemo />}/>
+    </Routes>
+  )
+};
+
+function Home(){
+  return(
+    <div>
+      <Link style={{margin:"20px"}} to="/">Home</Link>
+      <Link style={{margin:"20px"}} to="/apps">App1</Link>
+      <Link style={{margin:"20px"}} to="/form-demos">PlayerRegistration</Link>
+      <Link style={{margin:"20px"}} to="/form-demos1">ControlledFormDemo</Link>
+      <Link style={{margin:"20px"}} to="/form-demos2">ControlledFormDemoWithMore</Link>
+      <Link style={{margin:"20px"}} to="/form-demos3">FormDemo</Link>
+
+      
+
+
+    </div>
+  )
+}
+
+function App1() {
   return (
     
     <FruitContext.Provider value={{x:2,y:5}}>
+
+    {/* router demo */}
+    
 
     {/* event handling */}
 
     <MyEvent />
     <FormDemo />
+    <ControlledComponentFormDemo />
+    <ControlledComponentFormDemoWithMoreFormElements />
+    <PlayerRegistration />
 
 
 
