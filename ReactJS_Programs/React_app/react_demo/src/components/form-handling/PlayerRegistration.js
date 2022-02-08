@@ -49,6 +49,7 @@ const PlayerRegistration = () => {
 }
 
         return (
+            
             <div style={{ border: "10px dashed blue" }}>
             <NavBar />
                 <h1>*****************************************Player Registration******************************************</h1><br/>

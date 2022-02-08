@@ -22,11 +22,12 @@ import ControlledComponentFormDemo from "./components/form-handling/ControlledCo
 import ControlledComponentFormDemoWithMoreFormElements from "./components/form-handling/ControlledComponentFormDemoWithMoreFormElements";
 import PlayerRegistration from "./components/form-handling/PlayerRegistration";
 import { Route, Routes } from "react-router";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import NoPageFound from "./components/NoPageFound";
 import HelloWorldFunc from "./components/HelloWorldFunc";
 import PlayerDetails from "./components/PlayerDetails";
 import NavBar from "./components/NavBar";
+import Playerlist from "./components/PlayerList";
 // import Player from "./components/Player";
 
 
@@ -59,6 +60,7 @@ function App() {
 
 
       <Route path="/apps" element={<App1 />} />
+      <Route path="/players" element={<Playerlist />} />
       <Route path="/form-demos" element={<PlayerRegistration />} />
       <Route path="/form-demos1" element={<ControlledComponentFormDemo />} />
       <Route path="/form-demos2" element={<ControlledComponentFormDemoWithMoreFormElements />} />
