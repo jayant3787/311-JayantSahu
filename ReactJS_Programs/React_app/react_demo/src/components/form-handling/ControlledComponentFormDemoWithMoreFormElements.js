@@ -1,4 +1,5 @@
 import { useState } from "react";
+import NavBar from "../NavBar";
 
 const ControlledComponentFormDemoWithMoreFormElements = () => {
 
@@ -26,6 +27,7 @@ const ControlledComponentFormDemoWithMoreFormElements = () => {
 
         return (
             <div style={{ border: "3px solid orange" }}>
+            <NavBar />
                 Contolled Form Demo with some more form elements:
                 <br />
                 <form id="frm1" name="form4" action="process.php">

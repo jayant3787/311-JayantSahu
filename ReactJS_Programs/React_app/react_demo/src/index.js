@@ -10,7 +10,7 @@ ReactDOM.render(
   <React.StrictMode>
   <BrowserRouter>
     <App />
-    <User name="Pooja sahu" />
+    {/* <User name="Pooja sahu" /> */}
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import NavBar from "../NavBar";
 
 
 // Uncontrolled component form demo
@@ -13,6 +14,7 @@ const FormDemo = () =>{
 
     return(
         <div style={{border:"3px solid red"}}>
+        <NavBar />
             UnControlled Form Demo: 
         <br/>
             <form id="frm1" name="form4" action="process.php">

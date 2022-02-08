@@ -11,6 +11,8 @@ class User extends Component {
         <Address address= {["2943 sangam chowk","101 ashoka ratna ", "102 Laxmi nagar"]} />
         <Hobby hobby={["Music , Cricket "]}/>
         <Qualification qualification={["BCA","MCA"]} />
+
+        You are from 
       </div>
     );
   }

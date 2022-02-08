@@ -1,4 +1,5 @@
 import { useState } from "react";
+import NavBar from "../NavBar";
 
 const PlayerRegistration = () => {
 
@@ -49,6 +50,7 @@ const PlayerRegistration = () => {
 
         return (
             <div style={{ border: "10px dashed blue" }}>
+            <NavBar />
                 <h1>*****************************************Player Registration******************************************</h1><br/>
                 <br />
                 <form id="frm1" name="form4" action="process.php">
