@@ -28,12 +28,19 @@ import HelloWorldFunc from "./components/HelloWorldFunc";
 import PlayerDetails from "./components/PlayerDetails";
 import NavBar from "./components/NavBar";
 import Playerlist from "./components/PlayerList";
+import ReducersConceptDemo from "./components/redux-demo/reducers-starter";
+import ReduxStarter from "./components/redux-demo/redux-reducer-starter2";
+import ReduxDemo from "./components/redux-demo/ReduxDemo";
 // import Player from "./components/Player";
 
 
 function App() {
   return (
     <Routes>
+
+    <Route path="/redux/reducers-demo" element={<ReducersConceptDemo />} />
+    <Route path="/redux" element={<ReduxStarter />} />
+    <Route path="/redux/redux-demo" element={<ReduxDemo />} />
   
       <Route path="/" element={<Home />} />
 

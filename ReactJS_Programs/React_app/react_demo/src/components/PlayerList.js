@@ -15,7 +15,7 @@ const Playerlist = () => {
         <div>
         <NavBar />
         <ul>
-            {playerData.map(item => <li>Click here to get the details of  <Link to={`/player/${item.name}`}>{item.name}</Link></li>)}
+            {playerData.map((item, key) => <li key={key}>Click here to get the details of  <Link to={`/player/${item.name}`}>{item.name}</Link></li>)}
 
         </ul>
         </div>

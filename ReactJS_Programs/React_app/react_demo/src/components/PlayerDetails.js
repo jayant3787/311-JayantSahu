@@ -1,10 +1,14 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
 const PlayerDetails = (props) => {
     const playerData = [
         { name: "peter", age: 25, role: "Batsman", country: "India", totRuns: 20000 },
-        { name: "mohan", age: 26, role: "Bowler", country: "India", totRuns: 500 }
+        { name: "mohan", age: 26, role: "Bowler", country: "India", totRuns: 500 },
+        { name: "virat", age: 27, role: "Batsman", country: "India", totRuns: 21000 },
+        { name: "rohit", age: 28, role: "Batsman", country: "India", totRuns: 22000 },
+        { name: "dhawan", age: 29, role: "Batsman", country: "India", totRuns: 23000 }
     ];
 
     const playerName = (name) => {
@@ -14,14 +18,15 @@ const PlayerDetails = (props) => {
         return null;
     }
     const { name, age, role, country, totRuns } = useParams();
+    const [searchParams] = useSearchParams();
+    console.log(searchParams);
     const [player1, setPlayer1] = useState({});
 
     useEffect(() => {
         setPlayer1(playerName(name));
-        // console.log('player1 details', + player1.name);
 
     },
-        [player1],
+        [player1.name],
     );
 
     let player2 = playerName(name);
@@ -41,7 +46,8 @@ const PlayerDetails = (props) => {
             solution 3 (based on useEffect):
             {
                 player2 ? player2.name : "Not Found"
-            }
+            }<br/>
+            SEARCH PARAMS: {searchParams}
 
         </div>
     )
