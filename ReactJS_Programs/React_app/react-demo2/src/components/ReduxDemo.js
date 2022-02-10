@@ -1,8 +1,9 @@
 import { useState } from "react";
 // import store from "./playerReducer";
-import store from "./myStore";
+import store from "../store/myStore";
+import NavBar from "./NavBar";
 
-const ReduxDemo = () => {
+const ReduxDemo = (props) => {
 
     // var storeData = store.getState();
     // console.log("initial data in the store");
@@ -83,12 +84,13 @@ const ReduxDemo = () => {
     return (
 
         <div>
+        <NavBar />
 
             <h1>
                 !!!!!!!!!!!!Redux Demo!!!!!!!!!!!<br />
                 Initial data from the store is:
                 <ul>
-                    {store.getState().map((item, key) => <li key={key}>{item.name} {item.age} {item.awards.join(",")} </li>
+                    {playerData.map((item, key) => <li key={key}>{item.name} {item.age} {item.awards.join(",")} </li>
 
                     )}
                 </ul>
