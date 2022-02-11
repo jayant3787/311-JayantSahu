@@ -1,28 +1,6 @@
 // import {createStore} from 'redux';
 import Immutable from 'immutable';
-
-var initialPlayers = [{
-    name: "jay",
-    age: 25,
-    awards: ["State", "National"]
-},
-{
-    name: "poo",
-    age: 26,
-    awards: ["State", "National"]
-},
-{
-    name: "sagar",
-    age: 27,
-    awards: ["State", "National"]
-},
-{
-    name: "jayant",
-    age: 25,
-    awards: ["State", "National"]
-}
-];
-
+import initialPlayers from '../data/data';
 const playerReducer = (state = initialPlayers, action) => {
     console.log(action);
     console.log(state);

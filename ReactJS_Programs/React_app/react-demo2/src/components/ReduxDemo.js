@@ -1,6 +1,6 @@
 import { useState } from "react";
 // import store from "./playerReducer";
-import store from "../store/myStore";
+// import store from "../store/myStore";
 import NavBar from "./NavBar";
 
 const ReduxDemo = (props) => {
@@ -12,24 +12,29 @@ const ReduxDemo = (props) => {
 
     const addOnePlayer = () => {
         // console.log("dispatching ADD_ONE action");
-        store.dispatch({ type: "ADD_ONE" });
+        // store.dispatch({ type: "ADD_ONE" });
         // console.log("Latest Store data is : ");
         // console.log(store.getState());
+        props.addOnePlayer();
+
 
     }
 
     const addTwoPlayer = () => {
-        store.dispatch({ type: "ADD_TWO" });
+        // store.dispatch({ type: "ADD_TWO" });
         // console.log("Latest Store data is : ");
         // console.log(store.getState());
+        props.addTwoPlayer();
+
 
 
     }
 
     const RemoveLastPlayer = () => {
-        store.dispatch({ type: "REMOVE_LAST" });
+        // store.dispatch({ type: "REMOVE_LAST" });
         // console.log("Latest Store data is : ");
         // console.log(store.getState());
+        props.RemoveLastPlayer();
 
     }
 
@@ -37,9 +42,11 @@ const ReduxDemo = (props) => {
     const removeAge = (e) => {
         e.preventDefault();
         // console.log("dispatching remove by age");
-        store.dispatch({ type: "REMOVE_BY_AGE", playerAge: localState1.ageToRemove });
+        // store.dispatch({ type: "REMOVE_BY_AGE", playerAge: localState1.ageToRemove });
         // console.log("latest store data is :");
         // console.log(store.getState());
+        
+        props.removeAge(localState1.ageToRemove)
     }
 
 
@@ -53,9 +60,11 @@ const ReduxDemo = (props) => {
 
 
     const removePlayer = () => {
-        store.dispatch({ type: "REMOVE_NAME", playerName: localState.playerToRemove });
+        // store.dispatch({ type: "REMOVE_NAME", playerName: localState.playerToRemove });
         // console.log("latest store data is :");
         // console.log(store.getState());
+        props.removePlayer(localState.playerToRemove)
+
     }
 
 
@@ -78,7 +87,19 @@ const ReduxDemo = (props) => {
 
     const addPlayer = (e) => {
         e.preventDefault();
-        store.dispatch({ type: "ADD", playName: localState2.nAdd, playAge: localState2.aAdd, playAwards: localState2.awAdd })
+        // store.dispatch({ type: "ADD", playName: localState2.nAdd, playAge: localState2.aAdd, playAwards: localState2.awAdd })
+        props.addPlayer(localState2.nAdd, localState2.aAdd, localState2.awAdd);
+    }
+
+    const removeAge70 = (e) => {
+        e.preventDefault();
+        props.removeAge70();
+
+    }
+
+    const updateAge50 = (e) => {
+        e.preventDefault();
+        props.updateAge50();
     }
 
     return (
@@ -90,10 +111,11 @@ const ReduxDemo = (props) => {
                 !!!!!!!!!!!!Redux Demo!!!!!!!!!!!<br />
                 Initial data from the store is:
                 <ul>
-                    {playerData.map((item, key) => <li key={key}>{item.name} {item.age} {item.awards.join(",")} </li>
+                
+                    {props.playerData.map((item, key) => <li key={key}>Player # {key} : {item.name} {item.age} {item.awards?item.awards.join(","):""} </li>
 
                     )}
-                </ul>
+                </ul><hr/>
             </h1>
             <button onClick={addOnePlayer}>Add one player</button><br /><br />
             <button onClick={addTwoPlayer}>Add two player</button><br /><br />
@@ -117,7 +139,22 @@ const ReduxDemo = (props) => {
                 Enter Player Name : <input type="text" name="nAdd" value={localState2.nAdd} onChange={handleChange2} /><br />
                 Enter Player Age : <input type="text" name="aAdd" value={localState2.aAdd} onChange={handleChange2} /><br />
                 <button onClick={(e) => { addPlayer(e) }}>ADD the given player</button>
-            </form>
+            </form><hr/>
+
+            <form>REMOVE PLAYER BY AGE is greater than 70 DEMO<br />
+                <button onClick={(e) =>{ removeAge70(e)}}>Remove players with AGE greater than 70</button>
+            </form><hr /><hr/>
+
+            <form>UPDATE ALL PLAYER AGE BY 50 DEMO<br />
+                <button onClick={(e) =>{ updateAge50(e)}}>UPDATE ALL PLAYER AGE by 50</button>
+            </form><hr />
+
+            saga middleware demo:
+
+            <button onClick={() => props.callMyAsync()}>dispatch add one async</button>
+
+
+
 
 
 

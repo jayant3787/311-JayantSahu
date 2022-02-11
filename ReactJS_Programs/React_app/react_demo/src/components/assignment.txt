@@ -1,2 +1,0 @@
-// Add a form in this component which has one text field that will take name. 
-// When they submit that particular player should be removed from the store.
