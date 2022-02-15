@@ -34,7 +34,20 @@ function* fetchNews() {
 
 
 
+  // my node app saga 
+
+  function* fetchNewApp(){
+      const json = yield fetch('http://localhost:8000/players').then(response => response.json(), );    
+      yield put({ type: "NODE_APP_DATA_RECIEVED", json: json, });
+    }
+    function* actionWatcher1() {
+         yield takeLatest('GET_APP_DATA', fetchNewApp)
+    
+  }
+
+
+
 // for all the above sagas we need to create root saga
 export default function* rootSaga(){
-    yield all([helloSaga(), watchAddOneActionHappeningInTheApp(),actionWatcher()])
+    yield all([helloSaga(), watchAddOneActionHappeningInTheApp(),actionWatcher(),actionWatcher1()])
 }

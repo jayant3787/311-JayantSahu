@@ -19,6 +19,7 @@ props.article ?
     <img style={imgStyle} src={props.article.urlToImage} alt="" />
     <h4>{props.article.description}</h4>
     <a href={props.article.url} target="_blank">READ MORE</a>
+    <button onClick={() => {throw new Error("this is my new error")}}>Show the error after click</button>
   </div>
 </article> :
 null

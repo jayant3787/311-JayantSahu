@@ -1,7 +1,6 @@
 import { useState } from "react";
 // import store from "./playerReducer";
 // import store from "../store/myStore";
-import NavBar from "./NavBar";
 
 const ReduxDemo = (props) => {
 
@@ -105,7 +104,6 @@ const ReduxDemo = (props) => {
     return (
 
         <div>
-        <NavBar />
 
             <h1>
                 !!!!!!!!!!!!Redux Demo!!!!!!!!!!!<br />

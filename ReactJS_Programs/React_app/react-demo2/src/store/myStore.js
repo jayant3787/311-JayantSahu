@@ -4,12 +4,15 @@ import SecondReducer from '../reducers/SecondReducer';
 import ThirdReducer from '../reducers/ThirdReducer';
 import rootSaga from '../sagas/helloSaga';
 import NewsReducer from '../reducers/NewsReducer';
+import {composeWithDevTools} from 'redux-devtools-extension';
+
 // import PlayerReducer from './PlayerReducerUsingImmutableJSV2';
 
 
 // lest import the required middleware library
 //first lets install npm install redux-saga
 import createSagaMiddleware from 'redux-saga';
+import NewNodeReducer from '../reducers/NewNodeReducer';
 // saga is not the only middleware. there is another called Redux Thunk and a few others.
 // but saga is good for big projects coz it use promises
 // Redux Thunk has drawbacks-callback hell!
@@ -21,11 +24,12 @@ const rootReducer = combineReducers({
     reducer1:playerReducer,
     reducer2: SecondReducer,
     reducer3: ThirdReducer,
-    reducer4: NewsReducer
+    reducer4: NewsReducer,
+    reducer5: NewNodeReducer
 });
 const store = createStore(
     // PlayerReducer,
-    rootReducer,applyMiddleware(sagaMiddleware)// we are introducing middleware here
+    rootReducer,composeWithDevTools(applyMiddleware(sagaMiddleware))// we are introducing middleware here
     // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     );
 

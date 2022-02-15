@@ -6,6 +6,7 @@ const NavBar = () =>{
         <div>
         <NavLink activeClassName="active" style={{ margin: "20px" }} to="/">Home</NavLink>
         <NavLink activeClassName="active" style={{ margin: "20px" }} to="/news">NEWS</NavLink>
+        <NavLink activeClassName="active" style={{ margin: "20px" }} to="/nodeApp/players">NODE_APP_DATA</NavLink>
         <NavLink activeClassName="active" style={{margin: "20px"}} to="/redux/redux-demo2">Redux</NavLink>
         <NavLink activeClassName="active" style={{ margin: "20px" }} to="/apps">App1</NavLink>
         <NavLink activeClassName="active" style={{ margin: "20px" }} to="/players">Players</NavLink>
