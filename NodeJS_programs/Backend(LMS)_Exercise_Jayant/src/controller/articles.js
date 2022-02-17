@@ -64,7 +64,7 @@ const getArticleById = (req, res, next) => {
     });
 };
 
-//POST /products
+//POST /articles
 const postArticle = (req, res, next) => {
   const { body } = req;
   console.log(Object.keys(body));

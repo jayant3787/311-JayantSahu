@@ -1,3 +1,6 @@
+
+import  mongoose  from "mongoose";
+
 const playerSchema = new mongoose.Schema({
   
     name: {
@@ -6,12 +9,14 @@ const playerSchema = new mongoose.Schema({
     },
   
     age: {
-      type: String,
+      type: Number,
       required: true,
     },
   
     awards: {
-        type: String,
+        type: Array,
         required: true,
     },
 });
+
+mongoose.model("Players", playerSchema);
